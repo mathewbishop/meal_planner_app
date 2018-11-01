@@ -4,7 +4,13 @@ $('#weekPlanBtn').click(() => {
         url: queryURL,
         method: "GET"
     })
-    .then((response) => {
-        console.log(response);
-    })    
+    .then((res) => {
+        res.forEach(element => {
+            // console.log(element);
+            let tableCell = $('<td>')
+            tableCell.text(element.meal_name)
+            $('#planItems').append(tableCell);
+        });
+        
+    });    
 });

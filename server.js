@@ -36,7 +36,8 @@ const getWeeklyPlan = () => {
         "SELECT meal_name FROM meals ORDER BY RAND() LIMIT 7", 
         (err, res) => {
             if (err) throw err;
-            let data = JSON.stringify(res); 
+            let data = res;
+            JSON.stringify(data); 
             weeklyPlanData = data;
         }
     )
