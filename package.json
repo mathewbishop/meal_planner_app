@@ -1,0 +1,24 @@
+{
+  "name": "meal_planner_app",
+  "version": "1.0.0",
+  "description": "Meal Planner 2.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathewbishop/meal_planner_app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mathewbishop/meal_planner_app/issues"
+  },
+  "homepage": "https://github.com/mathewbishop/meal_planner_app#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  }
+}
