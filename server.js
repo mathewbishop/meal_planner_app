@@ -1,8 +1,13 @@
+// Packages/Dependencies
+//==============================================================
 const express = require("express");
 const mysql = require("mysql");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+//==============================================================
+// Database connection 
+//==============================================================
 const connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
@@ -18,6 +23,10 @@ const makeConnection = () => {
     });
 }
 
+
+//==============================================================
+// Middleware
+//==============================================================
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
