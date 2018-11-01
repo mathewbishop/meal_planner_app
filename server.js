@@ -29,19 +29,19 @@ const connection = mysql.createConnection({
 //         }
 //     })
 // }
-// let weeklyPlanData;
-// const getWeeklyPlan = () => {
-//     console.log("Fetching your weekly meal plan...\n");
-//         connection.query(
-//         "SELECT meal_name FROM meals ORDER BY RAND() LIMIT 7", 
-//         (err, res) => {
-//             if (err) throw err;
-//             let data = JSON.stringify(res); 
-//             weeklyPlanData = data;
-//         }
-//     )
+let weeklyPlanData;
+const getWeeklyPlan = () => {
+    console.log("Fetching your weekly meal plan...\n");
+        connection.query(
+        "SELECT meal_name FROM meals ORDER BY RAND() LIMIT 7", 
+        (err, res) => {
+            if (err) throw err;
+            let data = JSON.stringify(res); 
+            weeklyPlanData = data;
+        }
+    )
     
-// }
+}
 
 //==============================================================
 // Middleware
@@ -53,19 +53,16 @@ app.use(express.static("views"));
 //==============================================================
 // Routes
 //==============================================================
+app.get("/weeklymealplan", (req, res) => {
+    getWeeklyPlan();
+    res.json(weeklyPlanData);
+});
 
 
 
-
-
-
-
-
-
-
-
-
-
+//==============================================================
+// Listener
+//==============================================================
 app.listen(PORT, () => {
     console.log("Server listening on port " + PORT);
 });
