@@ -1,4 +1,5 @@
 $('#weekPlanBtn').click(() => {
+    $('#planItems').empty();
     let queryURL = "http://localhost:3000/weeklymealplan";
     $.ajax({
         url: queryURL,
@@ -6,11 +7,9 @@ $('#weekPlanBtn').click(() => {
     })
     .then((res) => {
         res.forEach(element => {
-            // console.log(element);
             let tableCell = $('<td>')
             tableCell.text(element.meal_name)
             $('#planItems').append(tableCell);
         });
-        
     });    
 });
