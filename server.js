@@ -48,14 +48,13 @@ const connection = mysql.createConnection({
 //==============================================================
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("views"));
 
 //==============================================================
 // Routes
 //==============================================================
 
-app.get("/", (req, res) => {
-   res.sendFile() 
-});
+
 
 
 
