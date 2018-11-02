@@ -1,0 +1,31 @@
+section.row.header {
+  text-align: center;
+  background-color: #F68B1F; }
+  section.row.header h1 {
+    color: white;
+    margin: 2rem 0 1rem 0; }
+  section.row.header img {
+    max-width: 25%;
+    margin: 1rem 0; }
+
+section.row.input {
+  text-align: center;
+  background-color: #62C2CC; }
+  section.row.input p {
+    margin: 2rem 0; }
+  section.row.input button {
+    display: block;
+    margin: 1rem auto; }
+
+section.row.output {
+  background-color: #F68B1F;
+  min-height: 30vh;
+  text-align: center; }
+  section.row.output table {
+    text-align: center; }
+
+section.row.footer {
+  background-color: #F68B1F;
+  min-height: 15vh; }
+
+/*# sourceMappingURL=styles.css.map */

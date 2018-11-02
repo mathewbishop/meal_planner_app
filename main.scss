@@ -1,0 +1,44 @@
+//==================================
+// Colors
+//==================================
+$color-primary: #F68B1F;
+$color-secondary: #62C2CC;
+
+
+//==================================
+// Header Row
+//==================================
+section.row.header {
+    text-align: center;
+    background-color: $color-primary;
+    h1 { color: white; margin: 2rem 0 1rem 0; }
+    img { max-width: 25%; margin: 1rem 0; }
+}
+
+//==================================
+// Input Row
+//==================================
+section.row.input {
+    text-align: center;
+    background-color: $color-secondary;
+    p { margin: 2rem 0; }
+    button { display: block; margin: 1rem auto; }
+}
+
+//==================================
+// Output Row
+//==================================
+section.row.output {
+    background-color: $color-primary;
+    min-height: 30vh;
+    text-align: center;
+    table { text-align: center; }
+}
+
+//==================================
+// Footer
+//==================================
+section.row.footer {
+    background-color: $color-primary;
+    min-height: 15vh;
+}
