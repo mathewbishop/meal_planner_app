@@ -5,8 +5,9 @@ A web app to assist in meal planning.
 # Main Feature List
 1. Get weekly meal plan
 2. Grocery bill for the given plan 
-3. Get new recipes
-4. Populate google calendar with meal plan
+3. View all meals
+4. Get new recipes
+5. Populate google calendar with meal plan
 
 
 

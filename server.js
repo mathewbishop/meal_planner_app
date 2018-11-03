@@ -18,30 +18,33 @@ const connection = mysql.createConnection({
     database: "mealplanner_db"
 });
 
-// let recipeData;
-// const callRecipeAPI = () => {
-//     let API_KEY = "484238b135b3904515a67e3f7db2eca3";
-//     let queryURL = `https://www.food2fork.com/api/search?key=${API_KEY}`
-//     request(queryURL, (err, response, body) => {
-//         if (err) throw err;
-//         if (!err && response.statusCode === 200) {
-//             recipeData = JSON.parse(body);
-//         }
-//     })
-// }
-let planData;
+//==============================================================
+// Fetch Meal Plan
+//==============================================================
+let mealPlan;
 const getPlan = () => {
-    console.log("Fetching your weekly meal plan...\n");
         connection.query(
         "SELECT meal_name FROM meals ORDER BY RAND() LIMIT 7", 
         (err, res) => {
             if (err) throw err;
             let data = res;
             JSON.stringify(data); 
-            weeklyPlanData = data;
+            mealPlan = data;
         }
     )
-    
+}
+
+//==============================================================
+// Fetch All Meals
+//==============================================================
+const fetchAllMeals = () => {
+    connection.query(
+        `SELECT * FROM meals`,
+        (err, res) => {
+            if (err) throw err;
+            
+        }
+    )
 }
 
 //==============================================================
@@ -56,7 +59,7 @@ app.use(express.static("views"));
 //==============================================================
 app.get("/weeklymealplan", (req, res) => {
     getPlan();
-    res.json(planData);
+    res.json(mealPlan);
 });
 
 
