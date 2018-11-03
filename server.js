@@ -27,9 +27,7 @@ const getPlan = () => {
         "SELECT meal_name FROM meals ORDER BY RAND() LIMIT 7", 
         (err, res) => {
             if (err) throw err;
-            let data = res;
-            JSON.stringify(data); 
-            mealPlan = data;
+            mealPlan = res;       
         }
     )
 }
@@ -57,7 +55,7 @@ app.use(express.static("views"));
 //==============================================================
 // Routes
 //==============================================================
-app.get("/weeklymealplan", (req, res) => {
+app.get("/api/meal-plan", (req, res) => {
     getPlan();
     res.json(mealPlan);
 });
