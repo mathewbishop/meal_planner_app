@@ -59,6 +59,8 @@ section.row.output {
     text-align: center;
     div#meal-data {
         padding: 3rem 0;
+        margin: 3rem auto;
+        width: 50%;
         p { color: white; font-size: $fontsize-1; }
     }
 }

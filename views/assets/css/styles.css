@@ -33,7 +33,9 @@ section.row.output {
   min-height: 30vh;
   text-align: center; }
   section.row.output div#meal-data {
-    padding: 3rem 0; }
+    padding: 3rem 0;
+    margin: 3rem auto;
+    width: 50%; }
     section.row.output div#meal-data p {
       color: white;
       font-size: 1.33rem; }
