@@ -1,31 +1,50 @@
+body {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500; }
+
 section.row.header {
   text-align: center;
   background-color: #F68B1F; }
   section.row.header h1 {
     color: white;
-    margin: 2rem 0 1rem 0; }
+    margin: 2rem 0 1rem 0;
+    font-weight: 800;
+    font-size: 3.15rem; }
   section.row.header img {
-    max-width: 25%;
+    width: 9rem;
     margin: 1rem 0; }
 
 section.row.input {
   text-align: center;
-  background-color: #62C2CC; }
+  background-color: #048BA8; }
   section.row.input p {
-    margin: 2rem 0; }
+    margin: 2rem 0;
+    color: white;
+    font-size: 1.33rem; }
   section.row.input button {
     display: block;
-    margin: 1rem auto; }
+    margin: 1rem auto;
+    background-color: #F68B1F;
+    color: #36382E;
+    font-weight: 700; }
 
 section.row.output {
   background-color: #F68B1F;
   min-height: 30vh;
   text-align: center; }
-  section.row.output table {
-    text-align: center; }
 
 section.row.footer {
-  background-color: #F68B1F;
+  background-color: #36382E;
   min-height: 15vh; }
+  section.row.footer footer {
+    padding: 1rem 0; }
+  section.row.footer p {
+    color: white;
+    margin: 0;
+    text-align: center; }
+  section.row.footer a {
+    color: #F68B1F; }
+    section.row.footer a:hover {
+      color: #EA3546; }
 
 /*# sourceMappingURL=styles.css.map */

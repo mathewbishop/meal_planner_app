@@ -6,6 +6,7 @@ A web app to assist in meal planning.
 1. Get weekly meal plan
 2. Grocery bill for the given plan 
 3. Get new recipes
+4. Populate google calendar with meal plan
 
 
 
@@ -13,3 +14,4 @@ A web app to assist in meal planning.
 1. Log in
 2. save plans
 3. Add meal to database
+4. Join recipe table

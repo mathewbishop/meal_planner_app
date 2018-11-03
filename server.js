@@ -29,8 +29,8 @@ const connection = mysql.createConnection({
 //         }
 //     })
 // }
-let weeklyPlanData;
-const getWeeklyPlan = () => {
+let planData;
+const getPlan = () => {
     console.log("Fetching your weekly meal plan...\n");
         connection.query(
         "SELECT meal_name FROM meals ORDER BY RAND() LIMIT 7", 
@@ -55,8 +55,8 @@ app.use(express.static("views"));
 // Routes
 //==============================================================
 app.get("/weeklymealplan", (req, res) => {
-    getWeeklyPlan();
-    res.json(weeklyPlanData);
+    getPlan();
+    res.json(planData);
 });
 
 
