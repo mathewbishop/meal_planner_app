@@ -57,7 +57,10 @@ section.row.output {
     background-color: $color-primary;
     min-height: 30vh;
     text-align: center;
-    
+    div#meal-data {
+        padding: 3rem 0;
+        p { color: white; font-size: $fontsize-1; }
+    }
 }
 
 //==================================
