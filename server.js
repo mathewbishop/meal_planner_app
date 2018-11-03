@@ -27,7 +27,7 @@ const getPlan = () => {
         "SELECT meal_name FROM meals ORDER BY RAND() LIMIT 7", 
         (err, res) => {
             if (err) throw err;
-            mealPlan = res;       
+            mealPlan = res;
         }
     )
 }
