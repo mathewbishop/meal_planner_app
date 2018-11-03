@@ -61,10 +61,10 @@ app.get("/api/meal-plan", (req, res) => {
     res.json(mealPlan);
 });
 
-app.get("/api/all-meals"), (req, res) => {
+app.get("/api/all-meals", (req, res) => {
     fetchAllMeals();
     res.json(allMeals);
-}
+});
 
 
 //==============================================================
