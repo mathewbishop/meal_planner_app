@@ -35,12 +35,13 @@ const getPlan = () => {
 //==============================================================
 // Fetch All Meals
 //==============================================================
+let allMeals;
 const fetchAllMeals = () => {
     connection.query(
         `SELECT * FROM meals`,
         (err, res) => {
             if (err) throw err;
-            
+            allMeals = res;
         }
     )
 }
@@ -60,6 +61,10 @@ app.get("/api/meal-plan", (req, res) => {
     res.json(mealPlan);
 });
 
+app.get("/api/all-meals"), (req, res) => {
+    fetchAllMeals();
+    res.json(allMeals);
+}
 
 
 //==============================================================
