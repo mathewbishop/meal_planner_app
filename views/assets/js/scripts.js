@@ -2,6 +2,7 @@
 // Global Vars
 //==============================================================
 let planContainer = $('#meal-data');
+
 function sum(total, num) {
     return total + num;
 }
@@ -9,7 +10,6 @@ function sum(total, num) {
 //==============================================================
 // Display Meal Plan
 //==============================================================
-
 $('#get-plan-btn').click(() => {
     let groceryBill = [];
     planContainer.empty();
@@ -42,9 +42,15 @@ $('#view-all-btn').click(() => {
     planContainer.empty();
     $.get("http://localhost:3000/api/all-meals", res => {
         res.forEach(item => {
-            let meal = $('<p>');
-            $(meal).text(item.meal_name);
-            planContainer.append(meal);
+            let mealCard = $('<div class=card>');
+            let cardBody = $('<div class=card-body>');
+            let cardTitle = $('<p class=card-title>');
+            let cardSubtitle = $('<small class=card-subtitle>');
+            $(cardTitle).text(item.meal_name);
+            $(cardSubtitle).text(item.category);
+            cardBody.append(cardTitle, cardSubtitle);
+            mealCard.append(cardBody);
+            planContainer.append(mealCard);
         })
     })
 })
