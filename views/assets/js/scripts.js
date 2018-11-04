@@ -10,9 +10,15 @@ $('#get-plan-btn').click(() => {
     planContainer.empty();
     $.get("http://localhost:3000/api/meal-plan", res => {
         res.forEach(item => {
-            let meal = $('<p>');
-            $(meal).text(item.meal_name);
-            planContainer.append(meal);
+            let card = $('<div class=card>');
+            let cardBody = $('<div class=card-body>');
+            let cardTitle = $('<p class=card-title>');
+            let cardSubtitle = $('<small class=card-subtitle>');
+            $(cardTitle).text(item.meal_name);
+            $(cardSubtitle).text(item.category);
+            cardBody.append(cardTitle,cardSubtitle);
+            card.append(cardBody);
+            planContainer.append(card);
         })
     })
 })

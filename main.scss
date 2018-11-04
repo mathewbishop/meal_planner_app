@@ -60,13 +60,13 @@ section.row.output {
     div#meal-data {
         padding: 3rem 0;
         margin: 3rem auto;
-        width: 50%;
         text-align: start;
         p { color: white; font-size: $fontsize-1; }
         .card { 
             background-color: $color-neutral;
             text-align: center;
-            p.card-title { margin: 0 0; font-size: $fontsize-3; }
+            margin: .5rem 0;
+            p.card-title { margin: 0 0; font-size: $fontsize-2; }
             small.card-subtitle { color: white; margin: 0 0; }
         }
     }

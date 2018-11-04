@@ -34,17 +34,17 @@ section.row.output {
   section.row.output div#meal-data {
     padding: 3rem 0;
     margin: 3rem auto;
-    width: 50%;
     text-align: start; }
     section.row.output div#meal-data p {
       color: white;
       font-size: 1.33rem; }
     section.row.output div#meal-data .card {
       background-color: #36382E;
-      text-align: center; }
+      text-align: center;
+      margin: .5rem 0; }
       section.row.output div#meal-data .card p.card-title {
         margin: 0 0;
-        font-size: 2.36rem; }
+        font-size: 1.77rem; }
       section.row.output div#meal-data .card small.card-subtitle {
         color: white;
         margin: 0 0; }

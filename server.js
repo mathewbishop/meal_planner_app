@@ -24,7 +24,7 @@ const connection = mysql.createConnection({
 let mealPlan;
 const getPlan = () => {
         connection.query(
-        "SELECT meal_name FROM meals ORDER BY RAND() LIMIT 7", 
+        "SELECT meal_name, category FROM meals ORDER BY RAND() LIMIT 7", 
         (err, res) => {
             if (err) throw err;
             mealPlan = res;
@@ -51,6 +51,9 @@ const fetchAllMeals = () => {
 //==============================================================
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+//==============================================================
+// Serve the views
+//==============================================================
 app.use(express.static("views"));
 
 //==============================================================
