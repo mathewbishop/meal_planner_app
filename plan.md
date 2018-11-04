@@ -9,6 +9,14 @@ A web app to assist in meal planning.
 4. Get new recipes
 5. Populate google calendar with meal plan
 
+## Meal data structure
+1. meal name
+2. meal category
+3. meal description?
+4. recipe?
+5. avg price
+6. sub-cat (meat)
+
 
 
 ## IceBox

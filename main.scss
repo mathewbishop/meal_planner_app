@@ -61,7 +61,9 @@ section.row.output {
         padding: 3rem 0;
         margin: 3rem auto;
         width: 50%;
-        p { color: white; font-size: $fontsize-1; }
+        text-align: start;
+        // p { color: white; font-size: $fontsize-1; }
+        li { border-radius: 2px; }
     }
 }
 

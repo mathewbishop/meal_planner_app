@@ -34,10 +34,10 @@ section.row.output {
   section.row.output div#meal-data {
     padding: 3rem 0;
     margin: 3rem auto;
-    width: 50%; }
-    section.row.output div#meal-data p {
-      color: white;
-      font-size: 1.33rem; }
+    width: 50%;
+    text-align: start; }
+    section.row.output div#meal-data li {
+      border-radius: 2px; }
 
 section.row.footer {
   background-color: #36382E;
