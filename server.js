@@ -18,30 +18,32 @@ const connection = mysql.createConnection({
     database: "mealplanner_db"
 });
 
-// let recipeData;
-// const callRecipeAPI = () => {
-//     let API_KEY = "484238b135b3904515a67e3f7db2eca3";
-//     let queryURL = `https://www.food2fork.com/api/search?key=${API_KEY}`
-//     request(queryURL, (err, response, body) => {
-//         if (err) throw err;
-//         if (!err && response.statusCode === 200) {
-//             recipeData = JSON.parse(body);
-//         }
-//     })
-// }
-let weeklyPlanData;
-const getWeeklyPlan = () => {
-    console.log("Fetching your weekly meal plan...\n");
+//==============================================================
+// Fetch Meal Plan
+//==============================================================
+let mealPlan;
+const getPlan = () => {
         connection.query(
-        "SELECT meal_name FROM meals ORDER BY RAND() LIMIT 7", 
+        "SELECT meal_name, category, avg_price FROM meals ORDER BY RAND() LIMIT 7", 
         (err, res) => {
             if (err) throw err;
-            let data = res;
-            JSON.stringify(data); 
-            weeklyPlanData = data;
+            mealPlan = res;
         }
     )
-    
+}
+
+//==============================================================
+// Fetch All Meals
+//==============================================================
+let allMeals;
+const fetchAllMeals = () => {
+    connection.query(
+        `SELECT * FROM meals`,
+        (err, res) => {
+            if (err) throw err;
+            allMeals = res;
+        }
+    )
 }
 
 //==============================================================
@@ -49,16 +51,23 @@ const getWeeklyPlan = () => {
 //==============================================================
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+//==============================================================
+// Serve the views
+//==============================================================
 app.use(express.static("views"));
 
 //==============================================================
 // Routes
 //==============================================================
-app.get("/weeklymealplan", (req, res) => {
-    getWeeklyPlan();
-    res.json(weeklyPlanData);
+app.get("/api/meal-plan", (req, res) => {
+    getPlan();
+    res.json(mealPlan);
 });
 
+app.get("/api/all-meals", (req, res) => {
+    fetchAllMeals();
+    res.json(allMeals);
+});
 
 
 //==============================================================
