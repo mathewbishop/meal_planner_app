@@ -24,7 +24,7 @@ const connection = mysql.createConnection({
 let mealPlan;
 const getPlan = () => {
         connection.query(
-        "SELECT meal_name, category FROM meals ORDER BY RAND() LIMIT 7", 
+        "SELECT meal_name, category, avg_price FROM meals ORDER BY RAND() LIMIT 7", 
         (err, res) => {
             if (err) throw err;
             mealPlan = res;
