@@ -30,3 +30,13 @@ $('#view-all-btn').click(() => {
         })
     })
 })
+
+//==============================================================
+// Get Recipes
+//==============================================================
+$('#get-recipes-btn').click(() => {
+    let searchTerm;
+    let API_KEY = "484238b135b3904515a67e3f7db2eca3";
+    let queryURL = `https://www.food2fork.com/api/search?key=${API_KEY}&q=${searchTerm}`
+})
+

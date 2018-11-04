@@ -47,7 +47,7 @@ section.row.input {
     text-align: center;
     background-color: $color-secondary;
     p { margin: 2rem 0; color: white; font-size: $fontsize-1; }
-    button { display: block; margin: 1rem auto; background-color: $color-primary; color: $color-neutral; font-weight: 700; }
+    button { margin: 0 1rem 2rem 1rem; background-color: $color-primary; color: $color-neutral; font-weight: 700; }
 }
 
 //==================================

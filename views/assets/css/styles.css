@@ -22,8 +22,7 @@ section.row.input {
     color: white;
     font-size: 1.33rem; }
   section.row.input button {
-    display: block;
-    margin: 1rem auto;
+    margin: 0 1rem 2rem 1rem;
     background-color: #F68B1F;
     color: #36382E;
     font-weight: 700; }
