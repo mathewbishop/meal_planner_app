@@ -62,8 +62,13 @@ section.row.output {
         margin: 3rem auto;
         width: 50%;
         text-align: start;
-        // p { color: white; font-size: $fontsize-1; }
-        li { border-radius: 2px; }
+        p { color: white; font-size: $fontsize-1; }
+        .card { 
+            background-color: $color-neutral;
+            text-align: center;
+            p.card-title { margin: 0 0; font-size: $fontsize-3; }
+            small.card-subtitle { color: white; margin: 0 0; }
+        }
     }
 }
 
