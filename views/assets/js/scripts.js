@@ -2,11 +2,6 @@
 // Global Vars
 //==============================================================
 let planContainer = $('#meal-data');
-
-function sum(total, num) {
-    return total + num;
-}
-
 //==============================================================
 // Display Meal Plan
 //==============================================================
@@ -26,7 +21,7 @@ $('#get-plan-btn').click(() => {
             planContainer.append(mealCard);
             groceryBill.push(item.avg_price);
         })
-        groceryBill = groceryBill.reduce(sum);
+        groceryBill = groceryBill.reduce((total, num) => total + num);
         let priceCard = $('<div class=card>');
         let price = $('<p class=card-text>');
         $(price).html(`Estimated Grocery Bill: $${groceryBill}`);
