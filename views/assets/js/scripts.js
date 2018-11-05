@@ -53,9 +53,22 @@ $('#view-all-btn').click(() => {
 //==============================================================
 // Get Recipes
 //==============================================================
-$('#get-recipes-btn').click(() => {
-    let searchTerm;
-    let API_KEY = "484238b135b3904515a67e3f7db2eca3";
-    let queryURL = `https://www.food2fork.com/api/search?key=${API_KEY}&q=${searchTerm}`
+$('#find-recipes-btn').click(() => {
+    $('#recipe-search-div').show();
 })
 
+$('#recipe-search-btn').click(() => {
+    planContainer.empty();
+    let searchTerm = $('#recipe-search-input').val().trim();
+    let APP_ID = "cb6593fa";
+    let API_KEY = "51c433b80e9216aebf68cc2186aaab47"
+    let queryURL = `https://api.edamam.com/search?q=${searchTerm}&app_id=${APP_ID}&app_key=${API_KEY}&from=0&to=10`;
+    $.get(queryURL, res => {
+        let arry = res.hits;
+        arry.forEach(item => {
+            console.log(item.recipe.label);
+            console.log(item.recipe.url);
+                
+        })
+    })
+})

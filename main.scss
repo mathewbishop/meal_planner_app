@@ -48,6 +48,7 @@ section.row.input {
     background-color: $color-secondary;
     p { margin: 2rem 0; color: white; font-size: $fontsize-1; }
     button { margin: 0 1rem 2rem 1rem; background-color: $color-primary; color: $color-neutral; font-weight: 700; }
+    div#recipe-search-div { display: none; }
 }
 
 //==================================

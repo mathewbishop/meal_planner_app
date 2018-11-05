@@ -26,6 +26,8 @@ section.row.input {
     background-color: #F68B1F;
     color: #36382E;
     font-weight: 700; }
+  section.row.input div#recipe-search-div {
+    display: none; }
 
 section.row.output {
   background-color: #F68B1F;
