@@ -48,7 +48,11 @@ section.row.input {
     background-color: $color-secondary;
     p { margin: 2rem 0; color: white; font-size: $fontsize-1; }
     button { margin: 0 1rem 2rem 1rem; background-color: $color-primary; color: $color-neutral; font-weight: 700; }
-    div#recipe-search-div { display: none; }
+    div#recipe-search-div { 
+        display: none;
+        input, small, button { display: block; margin: 1rem auto; }
+        input { border: 1px solid $color-neutral; border-radius: 4px; width: 300px; height: 2.5rem; padding: 0 .5rem; }
+     }
 }
 
 //==================================

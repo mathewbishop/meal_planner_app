@@ -28,6 +28,15 @@ section.row.input {
     font-weight: 700; }
   section.row.input div#recipe-search-div {
     display: none; }
+    section.row.input div#recipe-search-div input, section.row.input div#recipe-search-div small, section.row.input div#recipe-search-div button {
+      display: block;
+      margin: 1rem auto; }
+    section.row.input div#recipe-search-div input {
+      border: 1px solid #36382E;
+      border-radius: 4px;
+      width: 300px;
+      height: 2.5rem;
+      padding: 0 .5rem; }
 
 section.row.output {
   background-color: #F68B1F;
