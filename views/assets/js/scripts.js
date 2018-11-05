@@ -64,11 +64,19 @@ $('#recipe-search-btn').click(() => {
     let API_KEY = "51c433b80e9216aebf68cc2186aaab47"
     let queryURL = `https://api.edamam.com/search?q=${searchTerm}&app_id=${APP_ID}&app_key=${API_KEY}&from=0&to=10`;
     $.get(queryURL, res => {
-        console.log(res);
         let arry = res.hits;
         arry.forEach(item => {
-            console.log(item.recipe.label);
-            console.log(item.recipe.url);      
+            let recipeCard = $('<div class=card>');
+            let cardBody = $('<div class=card-body>');
+            let cardImg = $('<img class=card-img-top>');
+            let cardTitle = $('<p class=card-title>');
+            let cardSubtitle = $('<p class=card-subtitle>');
+            $(cardImg).attr("src", item.recipe.image);
+            $(cardTitle).html(item.recipe.label);
+            $(cardSubtitle).html(item.recipe.url);
+            cardBody.append(cardTitle, cardSubtitle, cardImg);
+            recipeCard.append(cardBody);
+            planContainer.append(recipeCard);
         })
     })
 })
