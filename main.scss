@@ -65,7 +65,6 @@ section.row.output {
     div#meal-data {
         padding: 3rem 0;
         margin: 3rem auto;
-        text-align: start;
         p { color: white; font-size: $fontsize-1; }
         .card { 
             background-color: $color-neutral;
@@ -74,6 +73,12 @@ section.row.output {
             p.card-title { margin: 0 0; font-size: $fontsize-2; }
             small.card-subtitle { color: white; margin: 0 0; }
         }
+    }
+    div#recipe-data {
+        padding: 3rem 0;
+        margin: 3rem auto;
+        p.card-title { color: white; font-size: $fontsize-1; }
+        a.card-subtitle { color: white; font-size: $fontsize-base; margin: .5rem 0; }
     }
 }
 

@@ -70,10 +70,11 @@ $('#recipe-search-btn').click(() => {
             let cardBody = $('<div class=card-body>');
             let cardImg = $('<img class=card-img-top>');
             let cardTitle = $('<p class=card-title>');
-            let cardSubtitle = $('<p class=card-subtitle>');
+            let cardSubtitle = $('<a class=card-subtitle btn>');
             $(cardImg).attr("src", item.recipe.image);
             $(cardTitle).html(item.recipe.label);
-            $(cardSubtitle).html(item.recipe.url);
+            $(cardSubtitle).attr("href", item.recipe.url);
+            $(cardSubtitle).html("View Recipe");
             cardBody.append(cardTitle, cardSubtitle, cardImg);
             recipeCard.append(cardBody);
             planContainer.append(recipeCard);

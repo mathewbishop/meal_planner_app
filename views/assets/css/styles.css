@@ -59,6 +59,13 @@ section.row.output {
       section.row.output div#meal-data .card small.card-subtitle {
         color: white;
         margin: 0 0; }
+  section.row.output div#recipe-data p.card-title {
+    color: white;
+    font-size: 1.33rem; }
+  section.row.output div#recipe-data a.card-subtitle {
+    color: white;
+    font-size: 1rem;
+    margin: .5rem 0; }
 
 section.row.footer {
   background-color: #36382E;
