@@ -4,7 +4,6 @@ const express = require("express");
 const mysql = require("mysql");
 const app = express();
 const path = require("path");
-const request = require("request");
 const PORT = process.env.PORT || 3000;
 
 //==============================================================

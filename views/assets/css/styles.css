@@ -37,6 +37,12 @@ section.row.input {
       width: 300px;
       height: 2.5rem;
       padding: 0 .5rem; }
+    section.row.input div#recipe-search-div label {
+      color: white;
+      font-size: 1.33rem; }
+    section.row.input div#recipe-search-div small {
+      color: white;
+      font-size: 1rem; }
 
 section.row.output {
   background-color: #F68B1F;
@@ -44,8 +50,7 @@ section.row.output {
   text-align: center; }
   section.row.output div#meal-data {
     padding: 3rem 0;
-    margin: 3rem auto;
-    text-align: start; }
+    margin: 3rem auto; }
     section.row.output div#meal-data p {
       color: white;
       font-size: 1.33rem; }
@@ -59,13 +64,16 @@ section.row.output {
       section.row.output div#meal-data .card small.card-subtitle {
         color: white;
         margin: 0 0; }
-  section.row.output div#recipe-data p.card-title {
-    color: white;
-    font-size: 1.33rem; }
-  section.row.output div#recipe-data a.card-subtitle {
-    color: white;
-    font-size: 1rem;
-    margin: .5rem 0; }
+  section.row.output div#recipe-data {
+    padding: 3rem 0;
+    margin: 3rem auto; }
+    section.row.output div#recipe-data p.card-title {
+      color: white;
+      font-size: 1.33rem; }
+    section.row.output div#recipe-data a.card-subtitle {
+      color: white;
+      font-size: 1rem;
+      margin: .5rem 0; }
 
 section.row.footer {
   background-color: #36382E;
