@@ -80,6 +80,7 @@ $('#recipe-search-btn').click(() => {
             planContainer.append(recipeCard);
         })
     })
+    document.getElementById("search-form").reset();
 })
 
 $('#hide-recipe-search').click(() => {
