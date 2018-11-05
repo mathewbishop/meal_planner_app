@@ -26,6 +26,17 @@ section.row.input {
     background-color: #F68B1F;
     color: #36382E;
     font-weight: 700; }
+  section.row.input div#recipe-search-div {
+    display: none; }
+    section.row.input div#recipe-search-div input, section.row.input div#recipe-search-div small, section.row.input div#recipe-search-div button {
+      display: block;
+      margin: 1rem auto; }
+    section.row.input div#recipe-search-div input {
+      border: 1px solid #36382E;
+      border-radius: 4px;
+      width: 300px;
+      height: 2.5rem;
+      padding: 0 .5rem; }
 
 section.row.output {
   background-color: #F68B1F;
@@ -48,6 +59,13 @@ section.row.output {
       section.row.output div#meal-data .card small.card-subtitle {
         color: white;
         margin: 0 0; }
+  section.row.output div#recipe-data p.card-title {
+    color: white;
+    font-size: 1.33rem; }
+  section.row.output div#recipe-data a.card-subtitle {
+    color: white;
+    font-size: 1rem;
+    margin: .5rem 0; }
 
 section.row.footer {
   background-color: #36382E;
