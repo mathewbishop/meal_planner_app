@@ -52,6 +52,8 @@ section.row.input {
         display: none;
         input, small, button { display: block; margin: 1rem auto; }
         input { border: 1px solid $color-neutral; border-radius: 4px; width: 300px; height: 2.5rem; padding: 0 .5rem; }
+        label { color: white; font-size: $fontsize-1; }
+        small { color: white; font-size: $fontsize-base; }
      }
 }
 
