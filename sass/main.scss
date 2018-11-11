@@ -47,7 +47,7 @@ body {
 header {
     background-color: $color-primary;
     h1 { color: white; font-size: $fontsize-4; }
-    img { max-width: 7rem; }
+    img { max-width: 7rem; margin-bottom: 2rem; }
 }
 
 //==================================
@@ -57,6 +57,14 @@ main {
     background-color: $color-secondary;
     min-height: 45vh;
     button { margin: 1rem; }
+    .main__subtitle { color: white; font-size: $fontsize-1; }
+    .search-form {
+        label { color: white; font-size: $fontsize-base; display: block; margin: 1rem 0; }
+        input { width: 18rem; margin-bottom: .4rem; }
+        small { display: block; margin-bottom: 2rem; }    
+        button { display: block; margin: 1rem auto; }
+    }
+    
 }
 
 

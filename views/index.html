@@ -25,21 +25,23 @@
         <main>
 
                 <section id="buttons">
-                    <p>What would you like to do?</p>
-                    <button @click="empty(); viewAllMeals();" id="view-all-btn" class="btn">View All Meals</button>
-                    <button id="get-plan-btn" class="btn">Get Meal Plan</button>
-                    <button v-on:click="displaySearch = true" id="find-recipes-btn" class="btn">Find New Recipes</button>
+                    <p class="main__subtitle">What would you like to do?</p>
+                    <button @click="empty(); viewAllMeals();" class="view-all btn">View All Meals</button>
+                    <button class="get-plan btn">Get Meal Plan</button>
+                    <button v-on:click="displaySearch = true" class="find-new-recipes btn">Find New Recipes</button>
                 </section>
 
-                <section v-show="displaySearch" id="recipe-search">
-                    <form id="search-form">
+                <section class="search-form" v-show="displaySearch">
+
+                    <form>
                         <label for="recipe-search-input">Search for Recipes</label>
                         <input id="recipe-search-input" type="text">
                     </form>
 
                     <small>ex. "Mexican Chicken", "Greek Salad", "Fish", etc.</small>
                     <button id="recipe-search-btn" class="btn" type="submit">Get Recipes</button>
-                    <button v-on:click="displaySearch = false" id="hide-recipe-search" class="btn">Go Back</button>
+                    <button v-on:click="displaySearch = false" class="btn">Go Back</button>
+
                 </section>
 
             

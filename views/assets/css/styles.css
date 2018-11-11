@@ -15,13 +15,31 @@ header {
     color: white;
     font-size: 3.15rem; }
   header img {
-    max-width: 7rem; }
+    max-width: 7rem;
+    margin-bottom: 2rem; }
 
 main {
   background-color: #048BA8;
   min-height: 45vh; }
   main button {
     margin: 1rem; }
+  main .main__subtitle {
+    color: white;
+    font-size: 1.33rem; }
+  main .search-form label {
+    color: white;
+    font-size: 1rem;
+    display: block;
+    margin: 1rem 0; }
+  main .search-form input {
+    width: 18rem;
+    margin-bottom: .4rem; }
+  main .search-form small {
+    display: block;
+    margin-bottom: 2rem; }
+  main .search-form button {
+    display: block;
+    margin: 1rem auto; }
 
 footer {
   background-color: #36382E;
