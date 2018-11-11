@@ -3,33 +3,35 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Meal Plan | Home</title>
+    <title>MP 2.0 | Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/images/peach-37629_640.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Raleway:500,500i,700,800" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/styles.css"/>
 </head>
 <body>
 
-    <div class="container-fluid"> <!-- container start -->
+    <div id="app" class="container"> <!-- container start -->
 
-        <section class="row header">
-            <header class="col">
-                    <h1 class="header-title">Meal Planner 2.0</h1>
-                    <img src="assets/images/peach-37629_640.png" alt="Graphic of a peach">
-            </header>
-        </section>
+        
+        <header>
+                <h1>Meal Planner 2.0</h1>
+                <img src="assets/images/peach-37629_640.png" alt="Graphic of a peach.">
+        </header>
+        
 
-        <section class="row input">
-            <div class="col">
+        
+            
+        <main>
 
-                <p>What would you like to do?</p>
-                <button id="view-all-btn" class="btn">View All Meals</button>
-                <button id="get-plan-btn" class="btn">Get Meal Plan</button>
-                <button id="find-recipes-btn" class="btn">Find New Recipes</button>
+                <section id="buttons">
+                    <p>What would you like to do?</p>
+                    <button @click="empty(); viewAllMeals();" id="view-all-btn" class="btn">View All Meals</button>
+                    <button id="get-plan-btn" class="btn">Get Meal Plan</button>
+                    <button v-on:click="displaySearch = true" id="find-recipes-btn" class="btn">Find New Recipes</button>
+                </section>
 
-                <div id="recipe-search-div">
-
+                <section v-show="displaySearch" id="recipe-search">
                     <form id="search-form">
                         <label for="recipe-search-input">Search for Recipes</label>
                         <input id="recipe-search-input" type="text">
@@ -37,39 +39,33 @@
 
                     <small>ex. "Mexican Chicken", "Greek Salad", "Fish", etc.</small>
                     <button id="recipe-search-btn" class="btn" type="submit">Get Recipes</button>
-                    <button id="hide-recipe-search" class="btn">Go Back</button>
-                </div>
+                    <button v-on:click="displaySearch = false" id="hide-recipe-search" class="btn">Go Back</button>
+                </section>
 
-            </div>
-        </section>
-        
-        <section class="row output">
-
-            <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 mx-auto">
+            
                 <div id="meal-data">
+                    <p v-for="meal in meal_names">{{ meal }}</p>
                 </div>
-            </div>
-
-            <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 mx-auto">
+            
                 <div id="recipe-data">
                 </div>
-            </div>
 
-        </section>
+        </main>
 
-        <section class="row footer">
-            <div class="col">
+        
+            
+        <footer>
+            <p class="footer__title">Meal Planner 2.0 <a href="https://github.com/mathewbishop/meal_planner_app">GitHub Repo</a></p>
+            <p>See more from <a href="https://github.com/mathewbishop">Mathew Bishop</a></p>
+            <p>Styles and UI contributions from <a href="https://github.com/Landar40">Landar40</a></p>
+        </footer>
 
-                <footer>
-                    <p>Meal Planner 2.0 <a href="https://github.com/mathewbishop/meal_planner_app">GitHub Repo</a></p>
-                    <p>See more from <a href="https://github.com/mathewbishop">Mathew Bishop</a></p>
-                    <p>Styles and UI contributions from <a href="https://github.com/Landar40">Landar40</a></p>
-                </footer>
-
-            </div>
-        </section>
+            
+        
         
     </div> <!-- container end -->
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/scripts.js"></script>
 </body>

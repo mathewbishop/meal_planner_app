@@ -1,0 +1,81 @@
+//==================================
+// Colors
+//==================================
+$color-primary: #F68B1F;
+$color-secondary: #048BA8;
+$color-neutral: #36382E;
+
+//==================================
+// Typography
+//==================================
+$fontsize-small: .75rem;
+$fontsize-base: 1rem;
+$fontsize-1: 1.33rem;
+$fontsize-2: 1.77rem;
+$fontsize-3: 2.36rem;
+$fontsize-4: 3.15rem;
+$fontsize-5: 4.20rem;
+$fontsize-6: 5.61rem;
+
+//==================================
+// Typeface
+//==================================
+$typeface: 'Raleway', sans-serif;
+
+//==================================
+// Global
+//==================================
+body {
+    font-family: $typeface;
+    font-weight: 500;
+}
+.container { 
+    text-align: center;
+}
+//==================================
+// Grid
+//==================================
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
+//==================================
+// Header Row
+//==================================
+header {
+    background-color: $color-primary;
+    h1 { color: white; font-size: $fontsize-4; }
+    img { max-width: 7rem; }
+}
+
+//==================================
+// Main
+//==================================
+main {
+    background-color: $color-secondary;
+    min-height: 45vh;
+    button { margin: 1rem; }
+}
+
+
+//==================================
+// Footer
+//==================================
+footer {
+    background-color: $color-neutral;
+    min-height: 20vh; 
+    .footer__title { margin-top: 3rem; }
+    p { color: white; margin: 0; }
+    a { 
+        color: $color-primary; 
+        &:hover { color: white; }
+    }
+}
+
+
+//==================================
+// Import Modules
+//==================================
+@import "modules";
