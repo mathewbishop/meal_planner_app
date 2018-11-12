@@ -105,11 +105,3 @@ const inputRow = new Vue({
         }
     }
 })
-
-
-// const outputRow = new Vue({
-//     el: ".output",
-//     data: {
-//         meal_names: mealNames
-//     }
-// })

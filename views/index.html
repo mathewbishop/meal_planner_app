@@ -12,58 +12,52 @@
 </head>
 <body>
 
-    <div id="app" class="container"> <!-- container start -->
+    <div class="container"> <!-- container start -->
 
         
         <header>
                 <h1>Meal Planner 2.0</h1>
                 <img src="assets/images/peach-37629_640.png" alt="Graphic of a peach.">
         </header>
-        
-
-        
             
-        <main>
+        <main id="app">
 
-                <section id="buttons">
+                <!-- user action options -->
+                <section>
                     <p class="main__subtitle">What would you like to do?</p>
                     <button @click="empty(); viewAllMeals();" class="view-all btn">View All Meals</button>
                     <button class="get-plan btn">Get Meal Plan</button>
                     <button v-on:click="displaySearch = true" class="find-new-recipes btn">Find New Recipes</button>
                 </section>
 
+                <!-- search form -- hidden until find-new-recipes btn clicked -->
                 <section class="search-form" v-show="displaySearch">
-
                     <form>
                         <input type="text" placeholder="Search...">
                     </form>
-
                     <small>ex. "Mexican Chicken", "Greek Salad", "Fish", etc.</small>
+                    
                     <button id="recipe-search-btn" class="btn" type="submit">Get Recipes</button>
                     <button v-on:click="displaySearch = false" class="btn">Go Back</button>
-
                 </section>
 
-            
-                <div id="meal-data">
+                <!-- meal data (from model) -->
+                <section id="meal-data">
                     <p v-for="meal in meal_names">{{ meal }}</p>
-                </div>
+                </section>
             
-                <div id="recipe-data">
-                </div>
+                <!-- recipe data (from 3rd party api) -->
+                <section id="recipe-data">
+                </section>
 
         </main>
 
-        
-            
         <footer>
             <p class="footer__title">Meal Planner 2.0 <a href="https://github.com/mathewbishop/meal_planner_app">GitHub Repo</a></p>
             <p>See more from <a href="https://github.com/mathewbishop">Mathew Bishop</a></p>
-            <p>Styles and UI contributions from <a href="https://github.com/Landar40">Landar40</a></p>
+            <p>Colors and style contributions contributions from <a href="https://github.com/Landar40">Landar40</a></p>
         </footer>
 
-            
-        
         
     </div> <!-- container end -->
 
