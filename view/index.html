@@ -53,9 +53,11 @@
 
                 <!-- meal data (from model) -->
                 <section id="meal-data">
-                    <div v-for="meal in meals">
+                    <div v-for="meal in meals" class="card">
                         <p>{{ meal.meal_name }}</p>
                         <p>{{ meal.category }}</p>
+                        <p>{{ meal.sub_category }}</p>
+                        <p>{{ meal.avg_price }}</p>
                     </div>
                 </section>
             

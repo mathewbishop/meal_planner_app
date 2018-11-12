@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 //==============================================================
 const getPlan = (sliderVal, callback) => {
         connection.query(
-        `SELECT meal_name, category, avg_price FROM meals ORDER BY RAND() LIMIT ${sliderVal}`,
+        `SELECT meal_name, category, sub_category, avg_price FROM meals ORDER BY RAND() LIMIT ${sliderVal}`,
         (err, res) => {
             if (err)
                 callback(err, null);

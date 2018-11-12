@@ -97,7 +97,7 @@ const main = new Vue({
         viewAllMeals: function() {
             $.get("http://localhost:3000/api/all-meals", res => {
                     res.forEach(item => {
-                        // mealNames.push(item.meal_name);
+                        
                     })
                     console.log(res);
                 })
