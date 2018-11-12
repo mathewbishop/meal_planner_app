@@ -9,13 +9,16 @@ const PORT = process.env.PORT || 3000;
 //==============================================================
 // Fetch Meal Plan
 //==============================================================
-let mealPlan;
-const getPlan = () => {
+// Thank you mithunsatheesh on Stack Overflow. Scope chain probs
+//==============================================================
+const getPlan = (callback) => {
         connection.query(
         "SELECT meal_name, category, avg_price FROM meals ORDER BY RAND() LIMIT 7", 
         (err, res) => {
-            if (err) throw err;
-            mealPlan = res;
+            if (err)
+                callback(err, null);
+            else
+                callback(null, res);
         }
     )
 }
@@ -39,17 +42,20 @@ const fetchAllMeals = () => {
 //==============================================================
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-//==============================================================
-// Serve the views
-//==============================================================
 app.use(express.static("view"));
-
 //==============================================================
 // Routes
 //==============================================================
 app.get("/api/meal-plan", (req, res) => {
-    getPlan();
-    res.json(mealPlan);
+        getPlan((err, data) => {
+            if (err) {
+                console.log(err);
+            }
+            else {
+                res.json(data);
+            }
+        });
+        
 });
 
 app.get("/api/all-meals", (req, res) => {
