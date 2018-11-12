@@ -102,6 +102,18 @@ const main = new Vue({
                     console.log(res);
                 })
             },
+            getPlan: function() {
+                let qty = {
+                    value: $("#meal-qty-slider").val()
+                }
+                console.log(qty);
+                $.post("/api/meal-plan", qty)
+                .then(res => {
+                    res.forEach(item => {
+                        mealNames.push(item.meal_name);
+                    });
+                });
+            },
         empty: function() {
             $("#meal-data").empty();
         }
