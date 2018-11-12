@@ -54,16 +54,20 @@
                 <!-- meal data (from model) -->
                 <section id="meal-data">
                     <div v-for="meal in meals" class="card">
-                        <h1 class="card-title">{{ meal.meal_name }}</h1>
-                        <p>{{ meal.category }}</p>
-                        <p>{{ meal.sub_category }}</p>
-                        <p>{{ meal.avg_price }}</p>
+                        <h1 @click="showMealDetail = !showMealDetail" class="card-title" class="card-title">{{ meal.meal_name }} <i v-if="!showMealDetail" class="arrow fas fa-caret-up"></i><i v-if="showMealDetail" class="arrow fas fa-caret-down"></i></h1>
+                        <div v-show="showMealDetail">
+                            <p>{{ meal.category }}</p>
+                            <p>{{ meal.sub_category }}</p>
+                            <p>{{ meal.avg_price }}</p>
+                        </div>
                     </div>
                     <div class="card">
-                        <h1 class="card-title">Beef Burritos</h1>
-                        <p>Category: Mexican</p>
-                        <p>Protein: Beef</p>
-                        <p>Estimated Cost: 8</p>
+                        <h1 @click="showMealDetail = !showMealDetail" class="card-title">Beef Burritos <i v-if="!showMealDetail" class="arrow fas fa-caret-up"></i><i v-if="showMealDetail" class="arrow fas fa-caret-down"></i></h1>
+                        <div v-show="showMealDetail">
+                            <p>Category: Mexican</p>
+                            <p>Protein: Beef</p>
+                            <p>Estimated Cost: 8</p>
+                        </div>
                     </div>
                 </section>
             

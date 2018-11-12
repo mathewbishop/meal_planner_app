@@ -90,6 +90,7 @@ const main = new Vue({
     data: {
         showSearch: false,
         showGetMeal: false,
+        showMealDetail: false,
         meals: [],
         value: 1
     },

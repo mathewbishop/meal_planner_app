@@ -69,7 +69,11 @@ main {
         button { display: block; margin: 1rem auto; }
     }
     #meal-data {
-        .card { max-width: 22rem; margin: 1rem auto; }
+        .card { 
+            max-width: 22rem; margin: 1rem auto;
+            .card-title { cursor: pointer; }
+            .arrow { margin-left: .7rem; font-size: $fontsize-2; }
+        }
     }
 }
 

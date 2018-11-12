@@ -57,6 +57,11 @@ main {
   main #meal-data .card {
     max-width: 22rem;
     margin: 1rem auto; }
+    main #meal-data .card .card-title {
+      cursor: pointer; }
+    main #meal-data .card .arrow {
+      margin-left: .7rem;
+      font-size: 1.77rem; }
 
 footer {
   background-color: #36382E;
