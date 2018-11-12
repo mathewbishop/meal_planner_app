@@ -11,3 +11,11 @@
     font-size: $fontsize-base;
     cursor: pointer;
 }
+
+.card {
+    background-color: $color-neutral;
+    color: white;
+    border-radius: 4px;
+    padding: .5rem;
+    .card-title { font-size: $fontsize-3; }
+}
