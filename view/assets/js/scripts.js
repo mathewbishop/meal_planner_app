@@ -83,7 +83,11 @@ let planContainer = $('#meal-data');
 //     document.getElementById("search-form").reset();
 // })
 
-let mealNames = [];
+var mealNames = [];
+var mealCategories = [];
+var mealSubcat = [];
+var mealPrice = [];
+var groceryBill;
 
 const main = new Vue({
     el: "#app",
@@ -91,6 +95,10 @@ const main = new Vue({
         showSearch: false,
         showGetMeal: false,
         meal_names: mealNames,
+        meal_category: mealCategories,
+        sub_category: mealSubcat,
+        avg_price: mealPrice,
+        groceryBill: groceryBill,
         value: 1
     },
     methods: {
@@ -111,7 +119,11 @@ const main = new Vue({
                 .then(res => {
                     res.forEach(item => {
                         mealNames.push(item.meal_name);
+                        mealCategories.push(item.category);
+                        mealSubcat.push(item.sub_category);
+                        mealPrice.push(item.avg_price);
                     });
+                    groceryBill = mealPrice.reduce((total, num) => total + num);
                 });
             },
         empty: function() {

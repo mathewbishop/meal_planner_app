@@ -35,7 +35,7 @@
                     <div>
                         <output id="meal-slider-readout" for="meal-qty-slider">{{ value }}</output>
                         <input v-model="value" type="range" id="meal-qty-slider" min="1" max="31" value="1">
-                        <button @click="getPlan()" class="btn">Get Meals</button>
+                        <button @click="empty(); getPlan();" class="btn">Get Meals</button>
                         <button @click="showGetMeal = false" class="btn">Close</button>
                     </div>
                 </section>
@@ -53,7 +53,8 @@
 
                 <!-- meal data (from model) -->
                 <section id="meal-data">
-                    <p v-for="meal in meal_names">{{ meal }}</p>
+                    <p v-for="category in meal_category">{{ category }}</p>
+                    <p v-for="name in meal_names">{{ name }}</p>
                 </section>
             
                 <!-- recipe data (from 3rd party api) -->
