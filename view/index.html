@@ -25,35 +25,41 @@
                 <!-- user action options -->
                 <section>
                     <p class="main__subtitle">What would you like to do?</p>
+                    <!-- view all -->
                     <button @click="empty(); viewAllMeals();" class="view-all btn">View All Meals</button>
+                    <!-- get meal plan -->
                     <button @click="showGetMeal = true" class="btn">Get Meal Plan</button>
+                    <!-- find recipes -->
                     <button @click="showSearch = true" class="find-new-recipes btn">Find New Recipes</button>
                 </section>
 
                 <!-- meal plan slider qty select -->
                 <section class="meal-plan-input" v-show="showGetMeal">
                     <div>
-                        <output id="meal-slider-readout" for="meal-qty-slider">{{ value }}</output>
-                        <input v-model="value" type="range" id="meal-qty-slider" min="1" max="31" value="1">
+
+                        <output id="meal-slider-readout" for="meal-qty-slider">{{ sliderValue }}</output>
+                        <input v-model="sliderValue" type="range" id="meal-qty-slider" min="1" max="31" value="1">
+
                         <button @click="getPlan()" class="btn">Get Meals</button>
                         <button @click="empty()" class="btn">Clear All</button>
                         <button @click="showGetMeal = false" class="btn">Close</button>
                     </div>
+
                 </section>
 
                 <!-- recipe search form -- hidden until find-new-recipes btn clicked -->
                 <section class="search-form" v-show="showSearch">
                     <form>
-                        <input type="text" placeholder="Search...">
+                        <input id="recipe-search-input" type="text" placeholder="Search...">
                     </form>
                     <small>ex. "Mexican Chicken", "Greek Salad", "Fish", etc.</small>
                     
-                    <button id="recipe-search-btn" class="btn" type="submit">Get Recipes</button>
+                    <button @click="searchRecipes()" class="btn" type="submit">Get Recipes</button>
                     <button @click="showSearch = false" class="btn">Close</button>
                 </section>
 
                 <!-- meal data (from model) -->
-                <section v-if="meals.length >= 1" id="meal-data">
+                <section v-if="meals.length > 0" id="meal-data">
                     <div v-for="meal in meals" class="card">
                         <h1 @click="showMealDetail = !showMealDetail" class="card-title" class="card-title">{{ meal.meal_name }}</h1>
                         <i v-if="!showMealDetail" @click="showMealDetail = !showMealDetail" class="arrow fas fa-caret-up"></i><i v-if="showMealDetail" @click="showMealDetail = !showMealDetail" class="arrow fas fa-caret-down"></i>
@@ -65,21 +71,16 @@
                     </div>
 
                     <!-- total estimated grocery bill -->
-                    <div v-if="meals.length >= 1" class="card">
+                    <div v-if="meals.length > 0" class="card">
                         <p>Estimated Grocery Bill: $ {{ groceryBill }}</p>
                     </div>
-                    <!-- <div class="card">
-                        <h1 @click="showMealDetail = !showMealDetail" class="card-title">Beef Burritos <i v-if="!showMealDetail" class="arrow fas fa-caret-up"></i><i v-if="showMealDetail" class="arrow fas fa-caret-down"></i></h1>
-                        <div v-show="showMealDetail">
-                            <p>Category: Mexican</p>
-                            <p>Protein: Beef</p>
-                            <p>Estimated Cost: 8</p>
-                        </div>
-                    </div> -->
                 </section>
             
                 <!-- recipe data (from 3rd party api) -->
                 <section id="recipe-data">
+                    <div class="card">
+                        {{ recipeSearchResults }}
+                    </div>
                 </section>
 
         </main>

@@ -46,7 +46,7 @@ app.use(express.static("view"));
 // Routes
 //==============================================================
 app.post("/api/meal-plan", (req, res) => {
-    let data = req.body.value;
+    let data = req.body.sliderValue;
         getPlan(data, (err, data) => {
             if (err) {
                 console.log(err);
