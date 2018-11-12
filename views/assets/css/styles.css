@@ -26,6 +26,9 @@ main {
   main .main__subtitle {
     color: white;
     font-size: 1.33rem; }
+  main .meal-plan-input button {
+    display: block;
+    margin: 1rem auto; }
   main .search-form .fa-search {
     margin: 1rem; }
   main .search-form input {
