@@ -1,21 +1,10 @@
 // Packages/Dependencies
 //==============================================================
 const express = require("express");
-const mysql = require("mysql");
+const connection = require("./config/connection");
 const app = express();
-const path = require("path");
 const PORT = process.env.PORT || 3000;
 
-//==============================================================
-// Database connection 
-//==============================================================
-const connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "dev",
-    password: "dev237",
-    database: "mealplanner_db"
-});
 
 //==============================================================
 // Fetch Meal Plan
@@ -53,7 +42,7 @@ app.use(express.json());
 //==============================================================
 // Serve the views
 //==============================================================
-app.use(express.static("views"));
+app.use(express.static("view"));
 
 //==============================================================
 // Routes
