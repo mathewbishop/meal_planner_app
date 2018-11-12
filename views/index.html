@@ -27,18 +27,27 @@
                     <p class="main__subtitle">What would you like to do?</p>
                     <button @click="empty(); viewAllMeals();" class="view-all btn">View All Meals</button>
                     <button class="get-plan btn">Get Meal Plan</button>
-                    <button v-on:click="displaySearch = true" class="find-new-recipes btn">Find New Recipes</button>
+                    <button @click="showSearch = true" class="find-new-recipes btn">Find New Recipes</button>
+                </section>
+
+                <!-- meal plan slider qty select -->
+                <section v-show="showGetMeal">
+                    <div>
+                        <output id="meal-slider-readout" for="meal-qty-slider">{{ value }}</output>
+                        <input v-model="value" type="range" id="meal-qty-slider" min="1" max="31" value="1">
+                        <button>Close</button>
+                    </div>
                 </section>
 
                 <!-- search form -- hidden until find-new-recipes btn clicked -->
-                <section class="search-form" v-show="displaySearch">
+                <section class="search-form" v-show="showSearch">
                     <form>
                         <input type="text" placeholder="Search...">
                     </form>
                     <small>ex. "Mexican Chicken", "Greek Salad", "Fish", etc.</small>
                     
                     <button id="recipe-search-btn" class="btn" type="submit">Get Recipes</button>
-                    <button v-on:click="displaySearch = false" class="btn">Go Back</button>
+                    <button @click="showSearch = false" class="btn">Close</button>
                 </section>
 
                 <!-- meal data (from model) -->

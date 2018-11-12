@@ -85,11 +85,13 @@ let planContainer = $('#meal-data');
 
 let mealNames = [];
 
-const inputRow = new Vue({
+const main = new Vue({
     el: "#app",
     data: {
-        displaySearch: false,
-        meal_names: mealNames
+        showSearch: false,
+        showGetMeal: false,
+        meal_names: mealNames,
+        value: 1
     },
     methods: {
         viewAllMeals: function() {
@@ -105,3 +107,7 @@ const inputRow = new Vue({
         }
     }
 })
+
+// let slider = document.getElementById("meal-qty-slider");
+//             let output = document.getElementById("meal-slider-readout");
+//              output.innerHTML = slider.value;
