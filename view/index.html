@@ -26,16 +26,17 @@
                 <section>
                     <p class="main__subtitle">What would you like to do?</p>
                     <button @click="empty(); viewAllMeals();" class="view-all btn">View All Meals</button>
-                    <button class="get-plan btn">Get Meal Plan</button>
+                    <button @click="showGetMeal = true" class="get-plan btn">Get Meal Plan</button>
                     <button @click="showSearch = true" class="find-new-recipes btn">Find New Recipes</button>
                 </section>
 
                 <!-- meal plan slider qty select -->
-                <section v-show="showGetMeal">
+                <section class="meal-plan-input" v-show="showGetMeal">
                     <div>
                         <output id="meal-slider-readout" for="meal-qty-slider">{{ value }}</output>
                         <input v-model="value" type="range" id="meal-qty-slider" min="1" max="31" value="1">
-                        <button>Close</button>
+                        <button class="btn">Get Meals</button>
+                        <button @click="showGetMeal = false" class="btn">Close</button>
                     </div>
                 </section>
 

@@ -58,6 +58,9 @@ main {
     min-height: 45vh;
     button { margin: 1rem; }
     .main__subtitle { color: white; font-size: $fontsize-1; }
+    .meal-plan-input {
+        button { display: block; margin: 1rem auto; }
+    }
     .search-form {
         .fa-search { margin: 1rem; }
         input { width: 18rem; height: 2rem; margin: 2rem 0 .4rem 0; border-radius: 4px; }
