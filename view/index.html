@@ -40,7 +40,7 @@
                     </div>
                 </section>
 
-                <!-- search form -- hidden until find-new-recipes btn clicked -->
+                <!-- recipe search form -- hidden until find-new-recipes btn clicked -->
                 <section class="search-form" v-show="showSearch">
                     <form>
                         <input type="text" placeholder="Search...">
@@ -54,21 +54,27 @@
                 <!-- meal data (from model) -->
                 <section id="meal-data">
                     <div v-for="meal in meals" class="card">
-                        <h1 @click="showMealDetail = !showMealDetail" class="card-title" class="card-title">{{ meal.meal_name }} <i v-if="!showMealDetail" class="arrow fas fa-caret-up"></i><i v-if="showMealDetail" class="arrow fas fa-caret-down"></i></h1>
+                        <h1 @click="showMealDetail = !showMealDetail" class="card-title" class="card-title">{{ meal.meal_name }}</h1>
+                        <i v-if="!showMealDetail" @click="showMealDetail = !showMealDetail" class="arrow fas fa-caret-up"></i><i v-if="showMealDetail" @click="showMealDetail = !showMealDetail" class="arrow fas fa-caret-down"></i>
                         <div v-show="showMealDetail">
-                            <p>{{ meal.category }}</p>
-                            <p>{{ meal.sub_category }}</p>
-                            <p>{{ meal.avg_price }}</p>
+                            <p>Category: {{ meal.category }}</p>
+                            <p>Protein: {{ meal.sub_category }}</p>
+                            <p>Estimated Cost: $ {{ meal.avg_price }}</p>
                         </div>
                     </div>
-                    <div class="card">
+
+                    <!-- total estimated grocery bill -->
+                    <div v-if="meals.avg_price" class="card">
+                        <p>{{ groceryBill }}</p>
+                    </div>
+                    <!-- <div class="card">
                         <h1 @click="showMealDetail = !showMealDetail" class="card-title">Beef Burritos <i v-if="!showMealDetail" class="arrow fas fa-caret-up"></i><i v-if="showMealDetail" class="arrow fas fa-caret-down"></i></h1>
                         <div v-show="showMealDetail">
                             <p>Category: Mexican</p>
                             <p>Protein: Beef</p>
                             <p>Estimated Cost: 8</p>
                         </div>
-                    </div>
+                    </div> -->
                 </section>
             
                 <!-- recipe data (from 3rd party api) -->

@@ -71,8 +71,8 @@ main {
     #meal-data {
         .card { 
             max-width: 22rem; margin: 1rem auto;
-            .card-title { cursor: pointer; }
-            .arrow { margin-left: .7rem; font-size: $fontsize-2; }
+            .card-title { cursor: pointer; margin: .5rem; }
+            .arrow { display: block; font-size: $fontsize-2; }
         }
     }
 }

@@ -85,12 +85,13 @@ let planContainer = $('#meal-data');
 
 
 
-const main = new Vue({
+const vm = new Vue({
     el: "#app",
     data: {
         showSearch: false,
         showGetMeal: false,
         showMealDetail: false,
+        showGrocBill: false,
         meals: [],
         value: 1
     },
@@ -111,11 +112,20 @@ const main = new Vue({
                 $.post("/api/meal-plan", qty)
                 .then(res => {
                     self.meals = res;
-                });
-                
+                });     
             },
         empty: function() {
             $("#meal-data").empty();
+        }
+    },
+    computed: {
+        groceryBill: function() {
+            let arry = [0];
+            this.meals.forEach(item => {
+                arry.push(item.avg_price);
+            })
+            let sum = arry.reduce((total, num) => total + num);
+            return sum;
         }
     }
 })
