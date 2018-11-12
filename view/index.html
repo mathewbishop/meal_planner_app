@@ -53,8 +53,8 @@
 
                 <!-- meal data (from model) -->
                 <section id="meal-data">
-                    <p v-for="category in meal_category">{{ category }}</p>
-                    <p v-for="name in meal_names">{{ name }}</p>
+                    <p v-for="meal in meals">{{ meals.meal_names }}</p>
+                    <p v-for="meal in meals">{{ meals.category }}</p>
                 </section>
             
                 <!-- recipe data (from 3rd party api) -->
