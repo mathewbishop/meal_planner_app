@@ -59,9 +59,10 @@ main {
     button { margin: 1rem; }
     .main__subtitle { color: white; font-size: $fontsize-1; }
     .search-form {
-        label { color: white; font-size: $fontsize-base; display: block; margin: 1rem 0; }
-        input { width: 18rem; margin-bottom: .4rem; }
-        small { display: block; margin-bottom: 2rem; }    
+        .fa-search { margin: 1rem; }
+        input { width: 18rem; height: 2rem; margin: 2rem 0 .4rem 0; border-radius: 4px; }
+        input[type="text"] { font-size: $fontsize-1; background-color: $color-primary; color: $color-neutral; border: none; padding-left: 2.4rem; background-image: url("../images/search-solid.svg"); background-position: 5px 5px; background-repeat: no-repeat; background-size: 1.5rem; }
+        small { display: block; margin-bottom: 2rem; color: white; font-size: $fontsize-small; }
         button { display: block; margin: 1rem auto; }
     }
     

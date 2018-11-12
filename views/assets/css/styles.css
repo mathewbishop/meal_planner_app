@@ -26,17 +26,28 @@ main {
   main .main__subtitle {
     color: white;
     font-size: 1.33rem; }
-  main .search-form label {
-    color: white;
-    font-size: 1rem;
-    display: block;
-    margin: 1rem 0; }
+  main .search-form .fa-search {
+    margin: 1rem; }
   main .search-form input {
     width: 18rem;
-    margin-bottom: .4rem; }
+    height: 2rem;
+    margin: 2rem 0 .4rem 0;
+    border-radius: 4px; }
+  main .search-form input[type="text"] {
+    font-size: 1.33rem;
+    background-color: #F68B1F;
+    color: #36382E;
+    border: none;
+    padding-left: 2.4rem;
+    background-image: url("../images/search-solid.svg");
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    background-size: 1.5rem; }
   main .search-form small {
     display: block;
-    margin-bottom: 2rem; }
+    margin-bottom: 2rem;
+    color: white;
+    font-size: 0.75rem; }
   main .search-form button {
     display: block;
     margin: 1rem auto; }
