@@ -35,7 +35,8 @@
                     <div>
                         <output id="meal-slider-readout" for="meal-qty-slider">{{ value }}</output>
                         <input v-model="value" type="range" id="meal-qty-slider" min="1" max="31" value="1">
-                        <button @click="getPlan();" class="btn">Get Meals</button>
+                        <button @click="getPlan()" class="btn">Get Meals</button>
+                        <button @click="empty()" class="btn">Clear All</button>
                         <button @click="showGetMeal = false" class="btn">Close</button>
                     </div>
                 </section>
@@ -52,7 +53,7 @@
                 </section>
 
                 <!-- meal data (from model) -->
-                <section id="meal-data">
+                <section v-if="meals.length >= 1" id="meal-data">
                     <div v-for="meal in meals" class="card">
                         <h1 @click="showMealDetail = !showMealDetail" class="card-title" class="card-title">{{ meal.meal_name }}</h1>
                         <i v-if="!showMealDetail" @click="showMealDetail = !showMealDetail" class="arrow fas fa-caret-up"></i><i v-if="showMealDetail" @click="showMealDetail = !showMealDetail" class="arrow fas fa-caret-down"></i>
@@ -64,8 +65,8 @@
                     </div>
 
                     <!-- total estimated grocery bill -->
-                    <div v-if="meals.avg_price" class="card">
-                        <p>{{ groceryBill }}</p>
+                    <div v-if="meals.length >= 1" class="card">
+                        <p>Estimated Grocery Bill: $ {{ groceryBill }}</p>
                     </div>
                     <!-- <div class="card">
                         <h1 @click="showMealDetail = !showMealDetail" class="card-title">Beef Burritos <i v-if="!showMealDetail" class="arrow fas fa-caret-up"></i><i v-if="showMealDetail" class="arrow fas fa-caret-down"></i></h1>

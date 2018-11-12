@@ -115,7 +115,7 @@ const vm = new Vue({
                 });     
             },
         empty: function() {
-            $("#meal-data").empty();
+            this.meals = [];
         }
     },
     computed: {
@@ -126,8 +126,9 @@ const vm = new Vue({
             })
             let sum = arry.reduce((total, num) => total + num);
             return sum;
+        },
+        mealsArryLength: function() {
+            return this.meals.length
         }
     }
 })
-
-
