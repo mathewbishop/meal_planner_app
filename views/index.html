@@ -3,73 +3,74 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Meal Plan | Home</title>
+    <title>MP 2.0 | Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/images/peach-37629_640.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Raleway:500,500i,700,800" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/styles.css"/>
 </head>
 <body>
 
-    <div class="container-fluid"> <!-- container start -->
+    <div class="container"> <!-- container start -->
 
-        <section class="row header">
-            <header class="col">
-                    <h1 class="header-title">Meal Planner 2.0</h1>
-                    <img src="assets/images/peach-37629_640.png" alt="Graphic of a peach">
-            </header>
-        </section>
-
-        <section class="row input">
-            <div class="col">
-
-                <p>What would you like to do?</p>
-                <button id="view-all-btn" class="btn">View All Meals</button>
-                <button id="get-plan-btn" class="btn">Get Meal Plan</button>
-                <button id="find-recipes-btn" class="btn">Find New Recipes</button>
-
-                <div id="recipe-search-div">
-
-                    <form id="search-form">
-                        <label for="recipe-search-input">Search for Recipes</label>
-                        <input id="recipe-search-input" type="text">
-                    </form>
-
-                    <small>ex. "Mexican Chicken", "Greek Salad", "Fish", etc.</small>
-                    <button id="recipe-search-btn" class="btn" type="submit">Get Recipes</button>
-                    <button id="hide-recipe-search" class="btn">Go Back</button>
-                </div>
-
-            </div>
-        </section>
         
-        <section class="row output">
+        <header>
+                <h1>Meal Planner 2.0</h1>
+                <img src="assets/images/peach-37629_640.png" alt="Graphic of a peach.">
+        </header>
+            
+        <main id="app">
 
-            <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 mx-auto">
-                <div id="meal-data">
-                </div>
-            </div>
+                <!-- user action options -->
+                <section>
+                    <p class="main__subtitle">What would you like to do?</p>
+                    <button @click="empty(); viewAllMeals();" class="view-all btn">View All Meals</button>
+                    <button class="get-plan btn">Get Meal Plan</button>
+                    <button @click="showSearch = true" class="find-new-recipes btn">Find New Recipes</button>
+                </section>
 
-            <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 mx-auto">
-                <div id="recipe-data">
-                </div>
-            </div>
+                <!-- meal plan slider qty select -->
+                <section v-show="showGetMeal">
+                    <div>
+                        <output id="meal-slider-readout" for="meal-qty-slider">{{ value }}</output>
+                        <input v-model="value" type="range" id="meal-qty-slider" min="1" max="31" value="1">
+                        <button>Close</button>
+                    </div>
+                </section>
 
-        </section>
+                <!-- search form -- hidden until find-new-recipes btn clicked -->
+                <section class="search-form" v-show="showSearch">
+                    <form>
+                        <input type="text" placeholder="Search...">
+                    </form>
+                    <small>ex. "Mexican Chicken", "Greek Salad", "Fish", etc.</small>
+                    
+                    <button id="recipe-search-btn" class="btn" type="submit">Get Recipes</button>
+                    <button @click="showSearch = false" class="btn">Close</button>
+                </section>
 
-        <section class="row footer">
-            <div class="col">
+                <!-- meal data (from model) -->
+                <section id="meal-data">
+                    <p v-for="meal in meal_names">{{ meal }}</p>
+                </section>
+            
+                <!-- recipe data (from 3rd party api) -->
+                <section id="recipe-data">
+                </section>
 
-                <footer>
-                    <p>Meal Planner 2.0 <a href="https://github.com/mathewbishop/meal_planner_app">GitHub Repo</a></p>
-                    <p>See more from <a href="https://github.com/mathewbishop">Mathew Bishop</a></p>
-                    <p>Styles and UI contributions from <a href="https://github.com/Landar40">Landar40</a></p>
-                </footer>
+        </main>
 
-            </div>
-        </section>
+        <footer>
+            <p class="footer__title">Meal Planner 2.0 <a href="https://github.com/mathewbishop/meal_planner_app">GitHub Repo</a></p>
+            <p>See more from <a href="https://github.com/mathewbishop">Mathew Bishop</a></p>
+            <p>Colors and style contributions contributions from <a href="https://github.com/Landar40">Landar40</a></p>
+        </footer>
+
         
     </div> <!-- container end -->
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/scripts.js"></script>
 </body>

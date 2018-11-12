@@ -12,8 +12,8 @@ const PORT = process.env.PORT || 3000;
 const connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
-    user: "root",
-    password: "penguin237",
+    user: "dev",
+    password: "dev237",
     database: "mealplanner_db"
 });
 
