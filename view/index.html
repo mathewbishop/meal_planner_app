@@ -26,7 +26,7 @@
                 <section>
                     <p class="main__subtitle">What would you like to do?</p>
                     <button @click="empty(); viewAllMeals();" class="view-all btn">View All Meals</button>
-                    <button @click="showGetMeal = true" class="get-plan btn">Get Meal Plan</button>
+                    <button @click="showGetMeal = true" class="btn">Get Meal Plan</button>
                     <button @click="showSearch = true" class="find-new-recipes btn">Find New Recipes</button>
                 </section>
 
@@ -35,7 +35,7 @@
                     <div>
                         <output id="meal-slider-readout" for="meal-qty-slider">{{ value }}</output>
                         <input v-model="value" type="range" id="meal-qty-slider" min="1" max="31" value="1">
-                        <button class="btn">Get Meals</button>
+                        <button @click="getPlan();" class="btn">Get Meals</button>
                         <button @click="showGetMeal = false" class="btn">Close</button>
                     </div>
                 </section>
@@ -53,7 +53,22 @@
 
                 <!-- meal data (from model) -->
                 <section id="meal-data">
-                    <p v-for="meal in meal_names">{{ meal }}</p>
+                    <div v-for="meal in meals" class="card">
+                        <h1 @click="showMealDetail = !showMealDetail" class="card-title" class="card-title">{{ meal.meal_name }} <i v-if="!showMealDetail" class="arrow fas fa-caret-up"></i><i v-if="showMealDetail" class="arrow fas fa-caret-down"></i></h1>
+                        <div v-show="showMealDetail">
+                            <p>{{ meal.category }}</p>
+                            <p>{{ meal.sub_category }}</p>
+                            <p>{{ meal.avg_price }}</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h1 @click="showMealDetail = !showMealDetail" class="card-title">Beef Burritos <i v-if="!showMealDetail" class="arrow fas fa-caret-up"></i><i v-if="showMealDetail" class="arrow fas fa-caret-down"></i></h1>
+                        <div v-show="showMealDetail">
+                            <p>Category: Mexican</p>
+                            <p>Protein: Beef</p>
+                            <p>Estimated Cost: 8</p>
+                        </div>
+                    </div>
                 </section>
             
                 <!-- recipe data (from 3rd party api) -->

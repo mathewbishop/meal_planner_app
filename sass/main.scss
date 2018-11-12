@@ -68,7 +68,13 @@ main {
         small { display: block; margin-bottom: 2rem; color: white; font-size: $fontsize-small; }
         button { display: block; margin: 1rem auto; }
     }
-    
+    #meal-data {
+        .card { 
+            max-width: 22rem; margin: 1rem auto;
+            .card-title { cursor: pointer; }
+            .arrow { margin-left: .7rem; font-size: $fontsize-2; }
+        }
+    }
 }
 
 
@@ -90,4 +96,4 @@ footer {
 //==================================
 // Import Modules
 //==================================
-@import "modules";
+@import "_modules";

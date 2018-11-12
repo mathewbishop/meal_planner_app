@@ -83,24 +83,36 @@ let planContainer = $('#meal-data');
 //     document.getElementById("search-form").reset();
 // })
 
-let mealNames = [];
+
 
 const main = new Vue({
     el: "#app",
     data: {
         showSearch: false,
         showGetMeal: false,
-        meal_names: mealNames,
+        showMealDetail: false,
+        meals: [],
         value: 1
     },
     methods: {
         viewAllMeals: function() {
             $.get("http://localhost:3000/api/all-meals", res => {
                     res.forEach(item => {
-                        mealNames.push(item.meal_name);
+                        
                     })
                     console.log(res);
                 })
+            },
+            getPlan: function() {
+                let qty = {
+                    value: $("#meal-qty-slider").val()
+                }
+                let self = this;
+                $.post("/api/meal-plan", qty)
+                .then(res => {
+                    self.meals = res;
+                });
+                
             },
         empty: function() {
             $("#meal-data").empty();
@@ -108,6 +120,4 @@ const main = new Vue({
     }
 })
 
-// let slider = document.getElementById("meal-qty-slider");
-//             let output = document.getElementById("meal-slider-readout");
-//              output.innerHTML = slider.value;
+
