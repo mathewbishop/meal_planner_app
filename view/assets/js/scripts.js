@@ -90,6 +90,7 @@ const main = new Vue({
     data: {
         showSearch: false,
         showGetMeal: false,
+        meals: [],
         value: 1
     },
     methods: {
@@ -105,17 +106,17 @@ const main = new Vue({
                 let qty = {
                     value: $("#meal-qty-slider").val()
                 }
-                console.log(qty);
+                let self = this;
                 $.post("/api/meal-plan", qty)
                 .then(res => {
-                    res.forEach(item => {
-                        
-                    });
-                    
+                    self.meals = res;
                 });
+                
             },
         empty: function() {
             $("#meal-data").empty();
         }
     }
 })
+
+
