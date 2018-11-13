@@ -71,6 +71,9 @@ const vm = new Vue({
         },
         toggleViewAllConsole: function() {
             this.showViewAllConsole = !this.showViewAllConsole;
+        },
+        toggleMealCardDetail: function() {
+            this.showMealDetail = !this.showMealDetail;
         }
 
     },

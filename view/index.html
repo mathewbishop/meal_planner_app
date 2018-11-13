@@ -68,8 +68,8 @@
                 <!-- MEAL DATA OUTPUT -->
                 <section v-if="meals.length > 0" id="meal-data">
                     <div v-for="meal in meals" class="card">
-                        <h1 @click="showMealDetail = !showMealDetail" class="card-title" class="card-title">{{ meal.meal_name }}</h1>
-                        <i v-if="!showMealDetail" @click="showMealDetail = !showMealDetail" class="arrow fas fa-caret-up"></i><i v-if="showMealDetail" @click="showMealDetail = !showMealDetail" class="arrow fas fa-caret-down"></i>
+                        <h1 @click="toggleMealCardDetail()" class="card-title" class="card-title">{{ meal.meal_name }}</h1>
+                        <i v-if="!showMealDetail" @click="toggleMealCardDetail()" class="arrow fas fa-caret-up"></i><i v-if="showMealDetail" @click="toggleMealCardDetail()" class="arrow fas fa-caret-down"></i>
                         <div v-show="showMealDetail">
                             <p>Category: {{ meal.category }}</p>
                             <p>Protein: {{ meal.sub_category }}</p>
