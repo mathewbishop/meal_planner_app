@@ -79,7 +79,7 @@
                 </section>
             
                 <!-- RECIPE DATA OUTPUT -->
-                <section v-if="recipeSearchResults > 0" id="recipe-data">
+                <section v-if="recipeSearchResults.length > 0" id="recipe-data">
                     <div v-for="recipe in recipeSearchResults" class="card">
                         <img :src="recipe.image" alt="">
                         <p class="card-title">{{ recipe.label }}</p>
