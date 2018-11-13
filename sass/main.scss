@@ -4,6 +4,7 @@
 $color-primary: #F68B1F;
 $color-secondary: #048BA8;
 $color-neutral: #36382E;
+$color-stop: #840400;
 
 //==================================
 // Typography
@@ -59,7 +60,21 @@ main {
     button { margin: 1rem; }
     .main__subtitle { color: white; font-size: $fontsize-1; }
     .meal-plan-input {
+        padding: 1rem; 
+        p { color: white; font-size: $fontsize-1; margin: 2rem auto; }
         button { display: block; margin: 1rem auto; }
+        #meal-qty-slider {
+            margin: 2rem auto; 
+            width: 15rem;
+        }
+        input[type=range] { 
+            appearance: none;
+            -webkit-appearance: none;
+            background: $color-primary;
+            height: 5px;
+            border-radius: 10px;
+        }
+        #meal-slider-readout { font-size: $fontsize-2; color: white; display: block; }
     }
     .search-form {
         .fa-search { margin: 1rem; }
@@ -72,7 +87,20 @@ main {
         .card { 
             max-width: 22rem; margin: 1rem auto;
             .card-title { cursor: pointer; margin: .5rem; }
-            .arrow { display: block; font-size: $fontsize-2; }
+            .arrow { display: block; font-size: $fontsize-2; cursor: pointer; }
+        }
+    }
+    #recipe-data {
+        .card { 
+            max-width: 22rem; margin: 1rem auto;
+            .card-title { cursor: pointer; margin: .5rem; }
+            .arrow { display: block; font-size: $fontsize-2; cursor: pointer; }
+            p { margin: .5rem auto; }
+            a { 
+                font-size: $fontsize-1;
+                color: $color-primary;
+                &:hover { color: white; }
+            }
         }
     }
 }
