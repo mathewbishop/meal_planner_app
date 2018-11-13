@@ -15,6 +15,7 @@ const vm = new Vue({
     el: "#app",
     data: {
         showMenu: true,
+        showViewAllConsole: false,
         showSearch: false,
         showMealInput: false,
         showMealDetail: false,
@@ -25,7 +26,7 @@ const vm = new Vue({
     methods: {
         viewAllMeals: function() {
             let self = this;
-            $.get("http://localhost:3000/api/all-meals") 
+            $.get("/api/all-meals") 
                 .then(res => {
                     self.meals = res;
                 });
@@ -67,6 +68,9 @@ const vm = new Vue({
         },
         toggleMenu: function() {
             this.showMenu = !this.showMenu;
+        },
+        toggleViewAllConsole: function() {
+            this.showViewAllConsole = !this.showViewAllConsole;
         }
 
     },
