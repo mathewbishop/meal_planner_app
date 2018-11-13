@@ -4,6 +4,7 @@
 $color-primary: #F68B1F;
 $color-secondary: #048BA8;
 $color-neutral: #36382E;
+$color-stop: #840400;
 
 //==================================
 // Typography
@@ -72,7 +73,20 @@ main {
         .card { 
             max-width: 22rem; margin: 1rem auto;
             .card-title { cursor: pointer; margin: .5rem; }
-            .arrow { display: block; font-size: $fontsize-2; }
+            .arrow { display: block; font-size: $fontsize-2; cursor: pointer; }
+        }
+    }
+    #recipe-data {
+        .card { 
+            max-width: 22rem; margin: 1rem auto;
+            .card-title { cursor: pointer; margin: .5rem; }
+            .arrow { display: block; font-size: $fontsize-2; cursor: pointer; }
+            p { margin: .5rem auto; }
+            a { 
+                font-size: $fontsize-1;
+                color: $color-primary;
+                &:hover { color: white; }
+            }
         }
     }
 }

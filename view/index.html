@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/styles.css"/>
 </head>
+
 <body>
 
     <div class="container"> <!-- container start -->
@@ -22,18 +23,18 @@
             
         <main id="app">
 
-                <!-- user action options -->
+                <!-- MAIN OPTIONS LIST -->
                 <section>
                     <p class="main__subtitle">What would you like to do?</p>
-                    <!-- view all -->
-                    <button @click="empty(); viewAllMeals();" class="view-all btn">View All Meals</button>
-                    <!-- get meal plan -->
-                    <button @click="showGetMeal = true" class="btn">Get Meal Plan</button>
-                    <!-- find recipes -->
-                    <button @click="showSearch = true" class="find-new-recipes btn">Find New Recipes</button>
+                    <!-- VIEW ALL -->
+                    <button @click="viewAllMeals()" class="view-all btn">View All Meals</button>
+                    <!-- GET MEAL PLAN -->
+                    <button @click="showGetMeal = true; showSearch = false" class="btn">Get Meal Plan</button>
+                    <!-- FIND RECIPES -->
+                    <button @click="showSearch = true; showGetMeal = false" class="find-new-recipes btn">Find New Recipes</button>
                 </section>
 
-                <!-- meal plan slider qty select -->
+                <!-- MEAL PLAN FORM/INPUT -->
                 <section class="meal-plan-input" v-show="showGetMeal">
                     <div>
 
@@ -41,13 +42,13 @@
                         <input v-model="sliderValue" type="range" id="meal-qty-slider" min="1" max="31" value="1">
 
                         <button @click="getPlan()" class="btn">Get Meals</button>
-                        <button @click="empty()" class="btn">Clear All</button>
                         <button @click="showGetMeal = false" class="btn">Close</button>
+                        <button @click="empty()" class="clear-btn">Clear All</button>
                     </div>
 
                 </section>
 
-                <!-- recipe search form -- hidden until find-new-recipes btn clicked -->
+                <!-- RECIPE SEARCH FORM -->
                 <section class="search-form" v-show="showSearch">
                     <form>
                         <input id="recipe-search-input" type="text" placeholder="Search...">
@@ -56,9 +57,10 @@
                     
                     <button @click="searchRecipes()" class="btn" type="submit">Get Recipes</button>
                     <button @click="showSearch = false" class="btn">Close</button>
+                    <button @click="empty()" class="clear-btn">Clear All</button>
                 </section>
 
-                <!-- meal data (from model) -->
+                <!-- MEAL DATA OUTPUT -->
                 <section v-if="meals.length > 0" id="meal-data">
                     <div v-for="meal in meals" class="card">
                         <h1 @click="showMealDetail = !showMealDetail" class="card-title" class="card-title">{{ meal.meal_name }}</h1>
@@ -70,14 +72,14 @@
                         </div>
                     </div>
 
-                    <!-- total estimated grocery bill -->
-                    <div v-if="meals.length > 0" class="card">
-                        <p>Estimated Grocery Bill: $ {{ groceryBill }}</p>
-                    </div>
+                        <!-- GROCERY BILL -->
+                        <div v-if="meals.length > 0" class="card">
+                            <p>Estimated Grocery Bill: $ {{ groceryBill }}</p>
+                        </div>
                 </section>
             
-                <!-- recipe data (from 3rd party api) -->
-                <section id="recipe-data">
+                <!-- RECIPE DATA OUTPUT -->
+                <section v-if="recipeSearchResults > 0" id="recipe-data">
                     <div v-for="recipe in recipeSearchResults" class="card">
                         <img :src="recipe.image" alt="">
                         <p class="card-title">{{ recipe.label }}</p>
