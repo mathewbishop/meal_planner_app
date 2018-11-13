@@ -26,9 +26,28 @@ main {
   main .main__subtitle {
     color: white;
     font-size: 1.33rem; }
-  main .meal-plan-input button {
-    display: block;
-    margin: 1rem auto; }
+  main .meal-plan-input {
+    padding: 1rem; }
+    main .meal-plan-input p {
+      color: white;
+      font-size: 1.33rem;
+      margin: 2rem auto; }
+    main .meal-plan-input button {
+      display: block;
+      margin: 1rem auto; }
+    main .meal-plan-input #meal-qty-slider {
+      margin: 2rem auto;
+      width: 15rem; }
+    main .meal-plan-input input[type=range] {
+      appearance: none;
+      -webkit-appearance: none;
+      background: #F68B1F;
+      height: 5px;
+      border-radius: 10px; }
+    main .meal-plan-input #meal-slider-readout {
+      font-size: 1.77rem;
+      color: white;
+      display: block; }
   main .search-form .fa-search {
     margin: 1rem; }
   main .search-form input {

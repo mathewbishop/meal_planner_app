@@ -37,7 +37,7 @@
                 <!-- MEAL PLAN FORM/INPUT -->
                 <section class="meal-plan-input" v-show="showMealInput">
                     <div>
-
+                        <p>Adjust the slider to choose the number of meals to return.</p>
                         <output id="meal-slider-readout" for="meal-qty-slider">{{ sliderValue }}</output>
                         <input v-model="sliderValue" type="range" id="meal-qty-slider" min="1" max="31" value="1">
 

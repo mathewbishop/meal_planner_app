@@ -60,7 +60,21 @@ main {
     button { margin: 1rem; }
     .main__subtitle { color: white; font-size: $fontsize-1; }
     .meal-plan-input {
+        padding: 1rem; 
+        p { color: white; font-size: $fontsize-1; margin: 2rem auto; }
         button { display: block; margin: 1rem auto; }
+        #meal-qty-slider {
+            margin: 2rem auto; 
+            width: 15rem;
+        }
+        input[type=range] { 
+            appearance: none;
+            -webkit-appearance: none;
+            background: $color-primary;
+            height: 5px;
+            border-radius: 10px;
+        }
+        #meal-slider-readout { font-size: $fontsize-2; color: white; display: block; }
     }
     .search-form {
         .fa-search { margin: 1rem; }
