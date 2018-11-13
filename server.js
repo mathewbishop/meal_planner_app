@@ -25,13 +25,15 @@ const getPlan = (sliderVal, callback) => {
 //==============================================================
 // Fetch All Meals
 //==============================================================
-let allMeals;
-const fetchAllMeals = () => {
+// let allMeals;
+const fetchAllMeals = (callback) => {
     connection.query(
         `SELECT * FROM meals`,
         (err, res) => {
-            if (err) throw err;
-            allMeals = res;
+            if (err)
+                callback(err, null);
+            else 
+                callback(null, res);
         }
     )
 }
@@ -58,8 +60,14 @@ app.post("/api/meal-plan", (req, res) => {
 });
 
 app.get("/api/all-meals", (req, res) => {
-    fetchAllMeals();
-    res.json(allMeals);
+    fetchAllMeals((err, data) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.json(data);
+        }
+    })
 });
 
 
