@@ -24,14 +24,14 @@
         <main id="app">
 
                 <!-- MAIN OPTIONS LIST -->
-                <section>
+                <section v-show="showMenu">
                     <p class="main__subtitle">What would you like to do?</p>
                     <!-- VIEW ALL -->
                     <button @click="viewAllMeals()" class="view-all btn">View All Meals</button>
                     <!-- GET MEAL PLAN -->
-                    <button @click="toggleMealInput(); showSearch = false" class="btn">Get Meal Plan</button>
+                    <button @click="toggleMealInput(); showSearch = false; showMenu = false" class="btn">Get Meal Plan</button>
                     <!-- FIND RECIPES -->
-                    <button @click="toggleSearch(); showMealInput = false" class="find-new-recipes btn">Find New Recipes</button>
+                    <button @click="toggleSearch(); showMealInput = false; showMenu = false" class="find-new-recipes btn">Find New Recipes</button>
                 </section>
 
                 <!-- MEAL PLAN FORM/INPUT -->
@@ -42,7 +42,7 @@
                         <input v-model="sliderValue" type="range" id="meal-qty-slider" min="1" max="31" value="1">
 
                         <button @click="getPlan()" class="btn">Get Meals</button>
-                        <button @click="toggleMealInput()" class="btn">Close</button>
+                        <button @click="toggleMealInput(); showMenu = true" class="btn">Back</button>
                         <button @click="empty()" class="clear-btn">Clear All</button>
                     </div>
 
@@ -56,7 +56,7 @@
                     <small>ex. "Mexican Chicken", "Greek Salad", "Fish", etc.</small>
                     
                     <button @click="searchRecipes()" class="btn" type="submit">Get Recipes</button>
-                    <button @click="toggleSearch()" class="btn">Close</button>
+                    <button @click="toggleSearch(); showMenu = true" class="btn">Back</button>
                     <button @click="empty()" class="clear-btn">Clear All</button>
                 </section>
 

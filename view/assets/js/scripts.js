@@ -1,6 +1,7 @@
 //==============================================================
 // Global Vars
 //==============================================================
+// Constructor function for receiving recipe data
 function Recipe(image, label, url) {
     this.image = image,
     this.label = label,
@@ -13,6 +14,7 @@ function Recipe(image, label, url) {
 const vm = new Vue({
     el: "#app",
     data: {
+        showMenu: true,
         showSearch: false,
         showMealInput: false,
         showMealDetail: false,
@@ -62,6 +64,9 @@ const vm = new Vue({
         },
         toggleMealInput: function() {
             this.showMealInput = !this.showMealInput;
+        },
+        toggleMenu: function() {
+            this.showMenu = !this.showMenu;
         }
 
     },
