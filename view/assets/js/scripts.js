@@ -6,6 +6,7 @@ function Recipe(image, label, url) {
     this.label = label,
     this.url = url
 }
+
 //==============================================================
 // Vue Instance
 //==============================================================
@@ -13,7 +14,7 @@ const vm = new Vue({
     el: "#app",
     data: {
         showSearch: false,
-        showGetMeal: false,
+        showMealInput: false,
         showMealDetail: false,
         meals: [],
         recipeSearchResults: [],
@@ -60,7 +61,7 @@ const vm = new Vue({
             this.showSearch = !this.showSearch;
         },
         toggleMealInput: function() {
-            this.showGetMeal = !this.showGetMeal;
+            this.showMealInput = !this.showMealInput;
         }
 
     },

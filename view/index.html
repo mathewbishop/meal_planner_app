@@ -31,11 +31,11 @@
                     <!-- GET MEAL PLAN -->
                     <button @click="toggleMealInput(); showSearch = false" class="btn">Get Meal Plan</button>
                     <!-- FIND RECIPES -->
-                    <button @click="toggleSearch(); showGetMeal = false" class="find-new-recipes btn">Find New Recipes</button>
+                    <button @click="toggleSearch(); showMealInput = false" class="find-new-recipes btn">Find New Recipes</button>
                 </section>
 
                 <!-- MEAL PLAN FORM/INPUT -->
-                <section class="meal-plan-input" v-show="showGetMeal">
+                <section class="meal-plan-input" v-show="showMealInput">
                     <div>
 
                         <output id="meal-slider-readout" for="meal-qty-slider">{{ sliderValue }}</output>
