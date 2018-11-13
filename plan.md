@@ -25,3 +25,10 @@ A web app to assist in meal planning.
 2. save plans
 3. Add meal to database
 4. Join recipe table
+
+
+# Current Tickets 
+1. Style the qty slider
+2. Consider main input UI redesign (3 buttons)
+3. All cards open when clicked; need only the one clicked to open
+    1. And add a button to open all

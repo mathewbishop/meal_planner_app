@@ -57,7 +57,14 @@ const vm = new Vue({
         empty: function() {
             this.meals = [];
             this.recipeSearchResults = [];
+        },
+        toggleSearch: function() {
+            this.showSearch = !this.showSearch;
+        },
+        toggleMealInput: function() {
+            this.showGetMeal = !this.showGetMeal;
         }
+
     },
     computed: {
         groceryBill: function() {
