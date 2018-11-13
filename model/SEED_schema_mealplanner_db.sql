@@ -12,3 +12,9 @@ CREATE TABLE meals (
     avg_price DECIMAL(6, 2) NULL
 );
 
+/* Note: For JAWSDB setup, must include:
+
+id INT AUTO_INCREMENT NOT NULL,
+createdAt TIMESTAMP NOT NULL,     (must be current_timestamp default)
+PRIMARY KEY (id) */
+
