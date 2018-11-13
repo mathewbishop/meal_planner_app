@@ -78,8 +78,10 @@
             
                 <!-- recipe data (from 3rd party api) -->
                 <section id="recipe-data">
-                    <div class="card">
-                        {{ recipeSearchResults }}
+                    <div v-for="recipe in recipeSearchResults" class="card">
+                        <img :src="recipe.image" alt="">
+                        <p class="card-title">{{ recipe.label }}</p>
+                        <p><a :href="recipe.url">View Recipe</a></p>
                     </div>
                 </section>
 

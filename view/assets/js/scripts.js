@@ -130,11 +130,9 @@ const vm = new Vue({
                 $.get(queryURL)
                 .then(res => {
                     let arry = res.hits;
-                    // let finalArry = [];
                     arry.forEach(item => {
                         self.recipeSearchResults.push(new Recipe(item.recipe.image, item.recipe.label, item.recipe.url));
                     })
-                    // console.log(finalArry);
                 })
                     
             },
