@@ -4,7 +4,7 @@ This is a side project I've been working on for my wife. Intended to help with d
 
 Note: This app is currently designed for my family's personal use only. Feel free to check it out, but currently there is no option to personalize the meals in the database!
 
-## Current Features 
+## Features 
 1. View all the meals in the database
 2. Return a meal plan. Select the number of meals you want to return (1-31) to get a list of random meals and the estimated grocery bill for the meal plan.
 3. Find new recipes. Enter a search term to search for new recipes. This feature uses a 3rd party API.
