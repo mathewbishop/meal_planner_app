@@ -18,11 +18,11 @@ Upon loading the app, you are presented with three choices in the form of button
 2. Get Meal Plan
 3. Find New Recipes
 
-**View All Meals** Click or tap (for touchscreen) the "VIEW ALL MEALS" button to return a list of all meals currently in the database.
+**View All Meals |** Click or tap (for touchscreen) the "VIEW ALL MEALS" button to return a list of all meals currently in the database.
 
-**Get Meal Plan** Click or tap the "GET MEAL PLAN" button to return a meal plan. When you choose this option, a slider will appear allowing you to choose a number between 1 and 31. This number represents how many meals you would like to return for your meal plan. Move the slider to your desired number, and click or tap the "GET MEALS" button. The number you chose on the slider will be the quantity of random meals that is returned from the database. 
+**Get Meal Plan |** Click or tap the "GET MEAL PLAN" button to return a meal plan. When you choose this option, a slider will appear allowing you to choose a number between 1 and 31. This number represents how many meals you would like to return for your meal plan. Move the slider to your desired number, and click or tap the "GET MEALS" button. The number you chose on the slider will be the quantity of random meals that is returned from the database. 
 
-**Find New Recipes** Click or tap the "FIND NEW RECIPES" button to search for recipes based on keywords. This feature will search a 3rd party recipe collection (NOT THE DATABASE) for recipes based on the keywords you enter, and will display the results. You may then click on the "View Recipe" link on any one of the results to go to that recipe.
+**Find New Recipes |** Click or tap the "FIND NEW RECIPES" button to search for recipes based on keywords. This feature will search a 3rd party recipe collection (NOT THE DATABASE) for recipes based on the keywords you enter, and will display the results. You may then click on the "View Recipe" link on any one of the results to go to that recipe.
 
 # Tech Used
 1. HTML5
