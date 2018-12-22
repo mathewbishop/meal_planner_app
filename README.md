@@ -4,7 +4,7 @@ An app to help the user make meal-planning decisions. [Click here to go to app](
 # Overview
 This is a side project I've been working on for my wife. Intended to help with decision-making when it comes to meal planning, and implement paperless tracking of our meals.
 
-**Note:** This app is currently designed for my family's personal use only. Feel free to check it out, but currently there is no option to personalize the meals in the database!
+**Note: This app is currently designed for my family's personal use only. Feel free to check it out, but currently there is no option to personalize the meals in the database!**
 
 # Features 
 1. View all the meals in the database
@@ -12,6 +12,7 @@ This is a side project I've been working on for my wife. Intended to help with d
 3. Find new recipes. Enter a search term to search for new recipes. This feature uses a 3rd party API.
 
 # Using the App
+To use the app visit the URL | https://mealplanner2.herokuapp.com/ or click [here](https://mealplanner2.herokuapp.com/)
 Upon loading the app, you are presented with three choices in the form of buttons. 
 
 1. View All Meals
@@ -24,7 +25,7 @@ Upon loading the app, you are presented with three choices in the form of button
 
 **Find New Recipes |** Click or tap the "FIND NEW RECIPES" button to search for recipes based on keywords. This feature will search a 3rd party recipe collection (NOT THE DATABASE) for recipes based on the keywords you enter, and will display the results. You may then click on the "View Recipe" link on any one of the results to go to that recipe.
 
-# Tech Used
+# Tech Stack
 1. HTML5
 2. Sass
 3. JavaScript
