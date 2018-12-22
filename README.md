@@ -12,7 +12,7 @@ This is a side project I've been working on for my wife. Intended to help with d
 3. Find new recipes. Enter a search term to search for new recipes. This feature uses a 3rd party API.
 
 # Using the App
-To use the app visit the URL | https://mealplanner2.herokuapp.com/ or click [here](https://mealplanner2.herokuapp.com/)
+To use the app visit the URL | https://mealplanner2.herokuapp.com/ or click [here](https://mealplanner2.herokuapp.com/).
 
 Upon loading the app, you are presented with three choices in the form of buttons. 
 
