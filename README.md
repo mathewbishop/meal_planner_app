@@ -13,6 +13,7 @@ This is a side project I've been working on for my wife. Intended to help with d
 
 # Using the App
 To use the app visit the URL | https://mealplanner2.herokuapp.com/ or click [here](https://mealplanner2.herokuapp.com/)
+
 Upon loading the app, you are presented with three choices in the form of buttons. 
 
 1. View All Meals
