@@ -53,8 +53,8 @@ const vm = new Vue({
                         self.recipeSearchResults.push(new Recipe(item.recipe.image, item.recipe.label, item.recipe.url));
                     });
                 });
-                    
             },
+            
         empty: function() {
             this.meals = [];
             this.recipeSearchResults = [];
