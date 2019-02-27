@@ -18,8 +18,12 @@ const orm = {
             callback(result);
         })
     },
-    addMeal: function() {
-        
+    insertOne: function(table, obj, callback) {
+        let query = "INSERT INTO ?? SET ?";
+        connection.query(query, [table, obj], (err, result) => {
+            if (err) throw err
+            callback(result)
+        })
     }
 }
 
