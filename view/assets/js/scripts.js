@@ -19,6 +19,7 @@ const vm = new Vue({
         showSearch: false,
         showMealInput: false,
         showMealDetail: false,
+        showAddMealForm: false,
         meals: [],
         recipeSearchResults: [],
         sliderValue: 1
@@ -69,6 +70,9 @@ const vm = new Vue({
         },
         toggleViewAllConsole: function() {
             this.showViewAllConsole = !this.showViewAllConsole;
+        },
+        toggleAddMealForm: function() {
+            this.showAddMealForm = !this.showAddMealForm;
         },
         toggleMealCardDetail: function() {
             this.showMealDetail = !this.showMealDetail;

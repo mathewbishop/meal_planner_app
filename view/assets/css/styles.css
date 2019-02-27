@@ -73,6 +73,22 @@ main {
   main .search-form button {
     display: block;
     margin: 1rem auto; }
+  main .add-meal-form input {
+    width: 18rem;
+    height: 2rem;
+    margin: 1rem auto;
+    border-radius: 4px;
+    display: block; }
+  main .add-meal-form input[type="text"] {
+    font-size: 1.33rem;
+    background-color: #F68B1F;
+    color: #36382E;
+    border: none;
+    padding-left: 2.4rem;
+    background-image: url("../images/search-solid.svg");
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    background-size: 1.5rem; }
   main #meal-data .card {
     max-width: 22rem;
     margin: 1rem auto; }
