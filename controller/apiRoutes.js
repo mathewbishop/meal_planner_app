@@ -23,7 +23,9 @@ router.get("/meals", (req, res) => {
 //==============================================================
 // Post New Meal
 //==============================================================
-
+router.post("/meals", (req, res) => {
+    orm.insertOne()
+})
 
 
 module.exports = router;

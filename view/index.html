@@ -32,6 +32,8 @@
                     <button @click="toggleMealInput(); toggleMenu()" class="btn">Get Meal Plan</button>
                     <!-- FIND RECIPES -->
                     <button @click="toggleSearch(); toggleMenu()" class="find-new-recipes btn">Find New Recipes</button>
+                    <!-- ADD MEAL -->
+                    <button @click=""; class="find-new-recipes btn">Add Meal</button>
                 </section>
 
                 <!-- VIEW ALL CONSOLE -->
@@ -63,6 +65,16 @@
                     <button @click="searchRecipes()" class="btn" type="submit">Get Recipes</button>
                     <button @click="toggleSearch(); empty(); showMenu = true" class="btn">Back</button>
                     <button @click="empty()" class="clear-btn">Clear All</button>
+                </section>
+
+                <!-- ADD MEAL FORM -->
+                <section class="search-form">
+                    <form>
+                        <input type="text" placeholder="Meal Name">
+                        <input type="text" placeholder="Category">
+                        <input type="text" placeholder="Beef, chicken, fish, etc">
+                        <input type="text" placeholder="Average Price">
+                    </form>
                 </section>
 
                 <!-- MEAL DATA OUTPUT -->
