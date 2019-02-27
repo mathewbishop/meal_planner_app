@@ -26,17 +26,15 @@ const vm = new Vue({
     methods: {
         viewAllMeals: function() {
             let self = this;
-            $.get("/api/all-meals") 
+            $.get("/meals") 
                 .then(res => {
                     self.meals = res;
                 });
             },
             getPlan: function() {
-                let qty = {
-                    sliderValue: $("#meal-qty-slider").val()
-                }
+                let qty = $("#meal-qty-slider").val();
                 let self = this;
-                $.post("/api/meal-plan", qty)
+                $.get("/meals/" + qty)
                 .then(res => {
                     self.meals = res;
                 });     

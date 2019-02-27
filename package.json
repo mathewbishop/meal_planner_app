@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/mathewbishop/meal_planner_app#readme",
   "dependencies": {
+<<<<<<< HEAD
     "dotenv": "^6.2.0",
+=======
+    "dotenv": "^6.1.0",
+>>>>>>> f43aa8106d954c12188dbcfae446a229256f38ca
     "express": "^4.16.4",
     "mysql": "^2.16.0"
   }
