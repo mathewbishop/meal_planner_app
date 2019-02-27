@@ -1,7 +1,7 @@
 //==============================================================
 // Imports
 //==============================================================
-const connection = require("./connection");
+const connection = require("../config/connection");
 
 const orm = {
     mealPlan: function(sliderVal, callback) {
@@ -11,12 +11,15 @@ const orm = {
             callback(result);
         })
     },
-    selectAllMeals: function(callback) {
+    selectAll: function(callback) {
         let query = "SELECT * FROM meals";
         connection.query(query, (err, result) => {
             if (err) throw err;
             callback(result);
         })
+    },
+    addMeal: function() {
+        
     }
 }
 

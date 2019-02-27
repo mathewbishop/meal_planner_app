@@ -1,7 +1,7 @@
 //==============================================================
 // Imports
 //==============================================================
-const orm = require("../config/orm");
+const orm = require("../model/orm");
 const router = require("express").Router();
 //==============================================================
 // Meal Plan
@@ -16,9 +16,14 @@ router.get("/meals/:qty", (req, res) => {
 // All Meals
 //==============================================================
 router.get("/meals", (req, res) => {
-    orm.selectAllMeals(data => {
+    orm.selectAll(data => {
         res.json(data);
     })
 });
+//==============================================================
+// Post New Meal
+//==============================================================
+
+
 
 module.exports = router;
