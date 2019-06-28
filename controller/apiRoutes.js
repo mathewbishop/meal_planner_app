@@ -7,23 +7,21 @@ const router = require("express").Router();
 // Meal Plan
 //==============================================================
 router.get("/meals/:qty", (req, res) => {
-    let mealQty = parseInt(req.params.qty);
-        orm.mealPlan(mealQty, data => {
-            res.json(data);
-        })
+  let mealQty = parseInt(req.params.qty);
+  orm.getMealPlan(mealQty, data => {
+    res.json(data);
+  });
 });
 //==============================================================
 // All Meals
 //==============================================================
 router.get("/meals", (req, res) => {
-    orm.selectAll(data => {
-        res.json(data);
-    })
+  orm.selectAll(data => {
+    res.json(data);
+  });
 });
 //==============================================================
 // Post New Meal
 //==============================================================
-
-
 
 module.exports = router;
