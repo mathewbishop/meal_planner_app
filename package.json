@@ -1,7 +1,7 @@
 {
   "name": "meal_planner_app",
-  "version": "1.0.0",
-  "description": "Meal Planner 2.0",
+  "version": "3.0.0",
+  "description": "Meal Planner",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,6 +20,7 @@
   "dependencies": {
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
-    "mysql": "^2.16.0"
+    "mysql": "^2.16.0",
+    "pug": "^2.0.4"
   }
 }
