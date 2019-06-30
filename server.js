@@ -3,9 +3,10 @@
 //==============================================================
 require("dotenv").config();
 const express = require("express");
-const PORT = process.env.PORT || 3000;
 const app = express();
-const apiRoutes = require("./controller/apiRoutes");
+const path = require("path");
+const PORT = process.env.PORT || 3000;
+const apiRoutes = require("./routes/apiRoutes");
 //==============================================================
 // VIEW ENGINE
 //==============================================================
@@ -16,7 +17,7 @@ app.set("views", "./views");
 //==============================================================
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 //==============================================================
 // ROUTES
 //==============================================================

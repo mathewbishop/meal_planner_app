@@ -3,14 +3,8 @@
 //==============================================================
 const orm = require("../controller/orm");
 const router = require("express").Router();
-//==============================================================
-// Meal Plan
-//==============================================================
-router.get("/meals/:qty", (req, res) => {
-    let mealQty = parseInt(req.params.qty);
-    orm.getMealPlan(mealQty, data => {
-        res.json(data);
-    });
+router.get("/", (req, res) => {
+    res.render("index");
 });
 //==============================================================
 // All Meals

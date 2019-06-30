@@ -3,12 +3,12 @@
 //==============================================================
 const mysql = require("mysql");
 //==============================================================
-// Database connection 
+// Database connection
 //==============================================================
-var connection;
+let connection;
 
 if (process.env.JAWSDB_URL) {
-    connection = mysql.createConnection(process.env.JAWSDB_URL) 
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
     connection = mysql.createConnection({
         host: process.env.DB_HOST,
@@ -18,7 +18,5 @@ if (process.env.JAWSDB_URL) {
         database: process.env.DB_NAME
     });
 }
-     
-
 
 module.exports = connection;
