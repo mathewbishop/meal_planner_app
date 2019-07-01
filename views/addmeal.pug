@@ -1,0 +1,24 @@
+include includes/header.pug
+
+div(class="container")
+    form(action="/addmeal", method="post" id="addMealForm")
+        div
+            label(for="meal_name") Meal Name:
+            input(type="text", name="meal_name")
+        div
+            label(for="category") Category:
+            input(type="text", name="category")
+        div
+            label(for="protein") Protein Source:
+            input(type="text", name="protein")
+        div
+            label(for="cook_time") Cook Time (mins):
+            input(type="text", name="cook_time")
+        div
+            label(for="ingredients") Ingredients:
+            textarea(name="ingredients", cols="30", rows="3")
+        div
+            label(for="instructions") Instructions:
+            textarea(name="instructions", cols="30", rows="3")
+        
+        button(type="submit" id="btnSubmitMeal") Submit

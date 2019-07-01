@@ -7,13 +7,15 @@ html(lang="en")
         link(rel="shortcut icon" href="" type="image/x-icon")
         link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous")
         link(rel="stylesheet" type="text/css" media="screen" href="/css/styles.css")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+        script(src="/js/scripts.js")
         title MP | 3.0
     body
         div(class="container")
             header(class="mainHeader")
                 h1(class="siteTitle") Meal Planner
-                section
+                section(class="subHead")
                     span(id="btnMainNav" class="fa fa-bars fa-2x")
-                        nav(class="mainNav")
-                            a(href="#") Add Meal
+                        nav(id="mainNav")
+                            a(href="/addmeal") Add Meal
                     input(type="text", name="search" placeholder="Search...")

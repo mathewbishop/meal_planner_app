@@ -1,10 +1,56 @@
 /* ******************************************************************** */
 /* GLOBAL/GENERAL */
 /* ******************************************************************** */
-.container {
+.container, .headerContainer {
     margin: 0 auto;
     max-width: 1000px;
 }
 /* ******************************************************************** */
 /* HEADER */
 /* ******************************************************************** */
+/* NAV */
+#mainNav {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+.mainHeader .subHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* ******************************************************************** */
+/* MEAL CARDS */
+/* ******************************************************************** */
+.mealCard {
+    border: 1px solid black;
+    border-radius: 4px;
+    margin: 2rem auto;
+    padding: 5px;
+}
+.mealCardTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 5px;
+}
+/* ******************************************************************** */
+/* ADD MEAL */
+/* ******************************************************************** */
+#addMealForm div {
+    margin: 1rem auto;
+    text-align: center;
+}
+#addMealForm div:first-child {
+    margin-top: 3rem;
+}
+#addMealForm label {
+    margin-right: 10px;
+}
+#addMealForm input[type='text'], #addMealForm textarea {
+    border-radius: 4px;
+    border: 1px solid lightgray;
+}
+#btnSubmitMeal {
+     display: block;
+     margin: 3rem auto;
+}

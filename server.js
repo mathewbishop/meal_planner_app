@@ -7,6 +7,7 @@ const app = express();
 const path = require("path");
 const PORT = process.env.PORT || 3000;
 const apiRoutes = require("./routes/apiRoutes");
+const pageRoutes = require("./routes/pageRoutes");
 //==============================================================
 // VIEW ENGINE
 //==============================================================
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, "public")));
 //==============================================================
 // ROUTES
 //==============================================================
+app.use(pageRoutes);
 app.use(apiRoutes);
 //==============================================================
 // LISTENER
