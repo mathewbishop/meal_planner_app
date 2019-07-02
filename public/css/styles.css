@@ -27,11 +27,19 @@
     border-radius: 4px;
     margin: 2rem auto;
     padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    cursor: pointer;
 }
 .mealCardTitle {
     font-size: 1.5rem;
     font-weight: 700;
     margin-top: 5px;
+}
+.btnDeleteMeal {
+    color: rgba(255, 0, 0, 0.829);
+    cursor: pointer;
 }
 /* ******************************************************************** */
 /* ADD MEAL */

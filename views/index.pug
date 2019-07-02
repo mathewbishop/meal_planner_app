@@ -3,7 +3,10 @@ include includes/header.pug
 div(class="container")
     section(id="mealsList")
     each meal in meals
-        div(class="mealCard")
-            p(class="mealCardTitle")= meal.meal_name 
-            p(class="mealCardCategory")= meal.category 
-            p(class="mealCardProtein")= meal.protein 
+        div(class="mealCard" data-mealid=meal.id)
+            div
+                p(class="mealCardTitle")= meal.meal_name 
+                p(class="mealCardCategory")= meal.category 
+                p(class="mealCardProtein")= meal.protein 
+            div 
+                span(class="btnDeleteMeal fas fa-trash fa-lg")
