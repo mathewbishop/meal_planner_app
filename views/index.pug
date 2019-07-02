@@ -2,7 +2,8 @@ include includes/header.pug
 
 div(class="container")
     section(id="mealsList")
+    each meal in meals
         div(class="mealCard")
-            p(class="mealCardTitle") Enchiladas
-            p(class="mealCardCategory") Category: Mexican
-            p(class="mealCardProtein") Protein: Chicken
+            p(class="mealCardTitle")= meal.meal_name 
+            p(class="mealCardCategory")= meal.category 
+            p(class="mealCardProtein")= meal.protein 

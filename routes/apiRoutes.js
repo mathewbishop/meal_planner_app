@@ -8,14 +8,18 @@ const router = require("express").Router();
 //==============================================================
 router.get("/meals", (req, res) => {
     orm.selectAll(data => {
-        res.json(data);
+        console.log(data);
+        res.end();
     });
 });
 //==============================================================
 // Post New Meal
 //==============================================================
 router.post("/addmeal", (req, res) => {
-    console.log(req.body);
-    res.redirect("/");
+    let meal = req.body;
+    meal.cook_time = parseInt(meal.cook_time);
+    orm.addMeal(meal, data => {
+        res.redirect("/");
+    });
 });
 module.exports = router;

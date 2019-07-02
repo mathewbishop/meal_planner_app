@@ -1,7 +1,12 @@
 const router = require("express").Router();
+const orm = require("../controller/orm");
 
 router.get("/", (req, res) => {
-    res.render("index");
+    orm.selectAllMeals(data => {
+        res.render("index", {
+            meals: data
+        });
+    });
 });
 
 router.get("/addmeal", (req, res) => {
