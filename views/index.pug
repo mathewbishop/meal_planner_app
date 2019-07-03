@@ -6,7 +6,7 @@ div(class="container")
         div(class="mealCard" data-mealid=meal.id)
             div
                 p(class="mealCardTitle")= meal.meal_name 
-                p(class="mealCardCategory")= meal.category 
-                p(class="mealCardProtein")= meal.protein 
+                p(class="mealCardCategory") Category: #{meal.category}
+                p(class="mealCardProtein") Protein Source: #{meal.protein} 
             div 
                 span(class="btnDeleteMeal fas fa-trash fa-lg")

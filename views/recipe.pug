@@ -1,4 +1,9 @@
 include includes/header.pug
 
 div(class="container")
-    
+    section#recipe
+        h1= meal.meal_name
+        p Category: #{meal.category}
+        p Protein Source: #{meal.protein}
+        h1 Recipe
+        p Cook Time: #{meal.cook_time}

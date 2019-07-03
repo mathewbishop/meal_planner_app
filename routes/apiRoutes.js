@@ -2,16 +2,23 @@
 // Imports
 //==============================================================
 const orm = require("../controller/orm");
+const { prepareMealDataPOST } = require("../controller/methods");
 const router = require("express").Router();
 //==============================================================
 // Add New Meal
 //==============================================================
 router.post("/meal", (req, res) => {
-    let meal = req.body;
-    meal.cook_time = parseInt(meal.cook_time);
-    orm.addMeal(meal, data => {
-        res.redirect("/");
-    });
+    let obj = req.body;
+    let meal = prepareMealDataPOST(obj);
+    if (meal === false) {
+        res.render("error");
+    }
+    else {
+        orm.addMeal(meal, data => {
+            res.redirect("/");
+        });
+    }
+    console.log(meal)
 });
 //==============================================================
 // Get Meal by ID
@@ -19,7 +26,9 @@ router.post("/meal", (req, res) => {
 router.get("/meal/:id", (req, res) => {
     let mealID = req.params.id;
     orm.selectById(mealID, data => {
-
+        res.render("recipe", {
+            meal: data
+        });
     });
 });
 //==============================================================
