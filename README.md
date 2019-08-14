@@ -1,6 +1,6 @@
 # Meal Planner 2.0
 
-*This version of the app is no longer the current version.*
+NOTE: *This version of the app is no longer the current version.*
 
 An app to help the user make meal-planning decisions. [Click here to go to app](https://mealplanner2.herokuapp.com/)
 
